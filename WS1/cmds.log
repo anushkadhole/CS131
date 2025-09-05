@@ -1,0 +1,15 @@
+    1  passwd
+    2  passwdd
+    3  passwd
+    4  wget -O out.pdf https://tinyurl.com/yy94jltt
+    5  ls
+    6  cd ~
+    7  mkdir cs131
+    8  cd cs131
+    9  git init
+   10  git config --global user.email "yourSJSUemail@sjsu.edu"
+   11  git config --global user.email "anushka.dhole@sjsu.edu"
+   12  git config --global user.name "Anushka Amol Dhole"
+   13  mkdir WS1
+   14  cd WS1
+   15  history > cmds.log
