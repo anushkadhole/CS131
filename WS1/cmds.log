@@ -13,3 +13,21 @@
    13  mkdir WS1
    14  cd WS1
    15  history > cmds.log
+   16  ls -latr
+   17  git add cmds.log
+   18  git commit -m "First commit for Worksheet 1"
+   19  pwd
+   20  whoami
+   21  cd ~DholeAnushkaAmol
+   22  ls
+   23  passwd
+   24  cd ~
+   25  mkdir cs131 && cd cs131
+   26  cd ~/cs131
+   27  git init
+   28  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   29  git config --global user.name "Anushka Dhole"
+   30  git config --global user.email "anushka.dhole@sjsu.edu"
+   31  mkdir WS1
+   32  cd WS1
+   33  history > cmds.log
