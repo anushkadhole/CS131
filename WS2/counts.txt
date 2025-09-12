@@ -1,0 +1,17 @@
+Explanation:
+Each wc result shows three numbers: lines, words, bytes.
+For grading, the important ones are line counts and word counts.
+
+WS2 counts for 'replied_to' and 'retweeted'
+
+replied_to — downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv (lines words bytes):
+  15502  530350 5281804
+
+replied_to — downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv (lines words bytes):
+  14896  620310 5742836
+
+retweeted — downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv (lines words bytes):
+ 178052 4973621 47947195
+
+retweeted — downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv (lines words bytes):
+     30    1071   10751
