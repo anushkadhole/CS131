@@ -1,0 +1,217 @@
+    1  passwd
+    2  passwdd
+    3  passwd
+    4  wget -O out.pdf https://tinyurl.com/yy94jltt
+    5  ls
+    6  cd ~
+    7  mkdir cs131
+    8  cd cs131
+    9  git init
+   10  git config --global user.email "yourSJSUemail@sjsu.edu"
+   11  git config --global user.email "anushka.dhole@sjsu.edu"
+   12  git config --global user.name "Anushka Amol Dhole"
+   13  mkdir WS1
+   14  cd WS1
+   15  history > cmds.log
+   16  ls -latr
+   17  git add cmds.log
+   18  git commit -m "First commit for Worksheet 1"
+   19  pwd
+   20  whoami
+   21  cd ~DholeAnushkaAmol
+   22  ls
+   23  passwd
+   24  csothersdont
+   25  whoami
+   26  pwd
+   27  wget -O out.pdf https://tinyurl.com/yy94jltt
+   28  ls -latr out.pdf
+   29  /'
+   30  4]|
+   31  ]|
+   32  cd ~
+   33  mkdir cs131 && cd cs131
+   34  cd ~/cs131
+   35  git init
+   36  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   37  git config --global user.name "Anushka Dhole"
+   38  git config --global user.email "anushka.dhole@sjsu.edu"
+   39  mkdir WS1
+   40  cd WS1
+   41  history > cmds.log
+   42  ls -latr
+   43  cd ~/cs131
+   44  git add WS1/cmds.log
+   45  git commit -m "WS1: add cmds.log"
+   46  git branch -M main
+   47  git push -u origin main
+   48  git remote -v
+   49  git push -u origin main
+   50  cd ~/cs131
+   51  git remote remove origin
+   52  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   53  git remote -v
+   54  git push -u origin main
+   55  git remote set-url origin "https://sjsucs131-admin:[REDACTED]@bitbucket.org/anushka_cs131/cs131.git"
+   56  cd ~/cs131
+   57  git remote remove origin
+   58  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   59  git remote -v
+   60  git push -u origin main
+   61  cd ~/cs131
+   62  ls -R
+   63  cd ~/cs131
+   64  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   65  git remote -v
+   66  git push -u origin main
+   67  cd ~/cs131
+   68  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   69  git push -u origin main
+   70  cd ~/cs131
+   71  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   72  git push -u origin main
+   73  cd ~/cs131
+   74  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   75  git push -u origin main
+   76  git config --global user.name  "Anushka Dhole"
+   77  git config --global user.email "anushka.dhole@sjsu.edu"
+   78  cd ~/cs131
+   79  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   80  git remote -v
+   81  git push -u origin main
+   82  git pull --rebase origin main
+   83  cd ~/cs131
+   84  git remote -v
+   85  cd ~/cs131
+   86  git remote -v
+   87  git pull --rebase origin main
+   88  cd ~/cs131
+   89  git remote -v
+   91  git pull --rebase origin main
+   92  cd ~/cs131
+   94  git pull --rebase origin main
+   95  git push -u origin main
+   96  git remote set-url origin "https://bitbucket.org/anushka_cs131/cs131.git"
+   97  git remote -v
+   98  mkdir ~/testclone && cd ~/testclone
+   99  git clone https://bitbucket.org/anushka_cs131/cs131.git cs131_Anushka_Dhole
+  100  cd ~
+  101  cd cs131
+  102  mkdir WS2
+  103  cd WS2
+  104  ls -lh /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA | grep CLEAN.tsv
+  105  cp -vn /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+  106  cp -vn /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv .
+  107  ls -lh
+  108  grep "replied_to" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc
+  109  grep "replied_to" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc
+  110  grep "retweeted" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc
+  111  grep "retweeted" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc
+  112  echo "WS2 counts for 'replied_to' and 'retweeted'" > counts.txt
+  113  echo "" >> counts.txt
+  114  echo "replied_to — downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  115  grep "replied_to" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  116  echo "" >> counts.txt
+  117  echo "replied_to — downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  118  grep "replied_to" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  119  echo "" >> counts.txt
+  120  echo "retweeted — downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  121  grep "retweeted" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  122  echo "" >> counts.txt
+  123  echo "retweeted — downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  124  grep "retweeted" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  125  cat counts.txt
+  126  nano counts.txt
+  127  cat counts.txt
+  128  history > cmds.log
+  129  cd ~/cs131/WS2
+  130  ls -lh
+  131  head counts.txt
+  132  cd ~/cs131
+  133  echo "*.tsv" >> .gitignore
+  134  git add .gitignore
+  135  git commit -m "Ignore dataset files"
+  136  cd WS2
+  137  git rm --cached *.tsv
+  138  git commit -m "Remove dataset files from Git tracking"
+  139  cd ~/cs131
+  140  git add WS2/counts.txt WS2/cmds.log
+  141  git commit -m "Worksheet 2 submission"
+  142  git push origin main
+  143  cd ~/cs131
+  144  git add WS2/counts.txt WS2/cmds.log
+  145  git status
+  146  git remote -v
+  147  git push origin main
+  148  git remote -v
+  149  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+  150  git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  151  cd ~/cs131
+  152  git remote -v
+  153  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+  154  git config --global --unset credential.helper || true
+  155  git credential-cache exit || true
+  156  cd ~/cs131
+  157  git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  158  cd ~/cs131
+  159  git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  160  cd ~/cs131
+  161  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+  162  git remote -v
+  163  git config --global --unset credential.helper || true
+  164  git credential-cache exit || true
+  165  GIT_ASKPASS= git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  166  cd ~/cs131
+  167  git remote -v
+  168  git status
+  169  cd ~/cs131
+  170  git remote -v
+  171  git config --global --unset credential.helper || true
+  172  git credential-cache exit || true
+  173  git push origin main
+  174  cd ~
+  175  cd cs131
+  176  mkdir -p WS2
+  177  cd WS2
+  178  cp -vn /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+  179  cd ~/cs131
+  180  ls WS2
+  181  git log -n 1
+  182  git status
+  183  git push origin main
+  184  cd ~/cs131
+  185  git remote -v
+  186  git config --global --unset credential.helper || true
+  187  git credential-cache exit || true
+  188  git push origin main
+  189  ssh-keygen -t ed25519 -C "anushka_cs131 CS131 key"
+  190  cat ~/.ssh/id_ed25519.pub
+  191  ssh-keygen -t ed25519 -C "anushka_cs131 CS131 key"
+  192  cat /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.ssh/id_ed25519.pub
+  193  cd ~/cs131
+  194  git remote set-url origin git@bitbucket.org:anushka_cs131/cs131.git
+  195  git remote -v
+  196  ssh -T git@bitbucket.org
+  197  cd ~/cs131
+  198  git push origin main
+  199  counts.txt
+  200  cmds.log
+  201  cd ~/cs131/WS2
+  202  ls -lh
+  203  head -n 10 counts.txt
+  204  nano ~/.bashrc
+  205  source ~/.bashrc
+  206  l
+  207  w
+  208  l
+  209  w
+  210  grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  211  ls
+  212  find ~ -name "downloaded_tweets_*.tsv"
+  213  cd /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2
+  214  ls
+  215  grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  216  grep "type=retweeted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  217  grep "type=replied_to" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  218  grep "type=quoted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  219  history > ~/cmds.log

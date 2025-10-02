@@ -1,0 +1,184 @@
+Script started on 2025-10-01 23:08:11-04:00
+bash-4.4$ nano ~/.bashrc
+(B)0[?1049h[1;45r[m[4l[39;49m[?1h=[?1h=[?1h=[?25l[39;49m[m[H[J[43;89H[0;7m[ New File ][m[H[0;7m  GNU nano 2.9.8                                                      /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrc                                                                 [1;188H[m[44d[0;7m^G[m Get Help	 [0;7m^O[m Write Out     [0;7m^W[m Where Is	   [0;7m^K[m Cut Text[69G[0;7m^J[m Justify[86G[0;7m^C[m Cur Pos[103G[0;7mM-U[m Undo[44;120H[0;7mM-A[m Mark Text    [0;7mM-][m To Bracket   [0;7mM-▲[m Previous     [0;7m^B[m Back[45d[0;7m^X[m Exit[45;18H[0;7m^R[m Read File     [0;7m^\[m Replace	   [0;7m^U[m Uncut Text    [0;7m^T[m To Spell[86G[0;7m^_[m Go To Line    [0;7mM-E[m Redo[45;120H[0;7mM-6[m Copy Text    [0;7mM-W[m WhereIs Next [0;7mM-▼[m Next[45;171H[0;7m^F[m ForwardMM[3d[39;49m[m[34h[?25h[?25l[1;180H[0;7mModified[m[3dalias l="ls -latr"[34h[?25h[?25l[4d[34h[?25h[?25lalias w="ls -la | wc"[43d[K[4;22H[34h[?25h[?25l[5d[34h[?25h[?25l[4;22H[34h[?25h[?25l[44;18H                              [0;7mM-D[m DOS Format [69G          [86G         [0;7mM-A[m Append      [44;120H                      [0;7mM-B[m Backup File[K[45;2H[0;7mC[m Cancel[45;18H                              [0;7mM-M[m Mac Format                  [86G         [0;7mM-P[m Prepend     [45;120H                      [0;7m^T[m To Files[KMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrc                                                                                                                   [43;1H[m[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[K[1;188H[1;180H[0;7m        [m[43;87H[0;7m[ Wrote 2 lines ][m[44;18H[0;7m^O[m Write Out     [0;7m^W[m Where Is      [0;7m^K[m Cut Text[69G[0;7m^J[m Justify[86G[0;7m^C[m Cur Pos       [0;7mM-U[m Undo[44;120H[0;7mM-A[m Mark Text    [0;7mM-][m To Bracket   [0;7mM-▲[m Previous     [0;7m^B[m Back[45;2H[0;7mX[m Exit  [45;18H[0;7m^R[m Read File     [0;7m^\[m Replace       [0;7m^U[m Uncut Text    [0;7m^T[m To Spell[86G[0;7m^_[m Go To Line    [0;7mM-E[m Redo[45;120H[0;7mM-6[m Copy Text    [0;7mM-W[m WhereIs Next [0;7mM-▼[m Next[45;171H[0;7m^F[m ForwardMM[4;22H[34h[?25h[?25l[44;18H                              [0;7mM-D[m DOS Format [69G          [86G         [0;7mM-A[m Append      [44;120H                      [0;7mM-B[m Backup File[K[45;2H[0;7mC[m Cancel[45;18H                              [0;7mM-M[m Mac Format                  [86G         [0;7mM-P[m Prepend     [45;120H                      [0;7m^T[m To Files[KMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrc                                                                                                                   [43;1H[m[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[43;75H[34h[?25h[?25l[0;7mO[m[43;76H[34h[?25h[?25l[0;7mO[m[43;77H[34h[?25h[?25l[0;7mO[m[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[43;78H[34h[?25h[?25l[0;7mSave file under DIFFERENT NAME?                                              [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOOO[m[43;78H[34h[?25h[?25l[0;7m [m[43;77H[34h[?25h[?25l[0;7m [m[43;76H[34h[?25h[?25l[43;76H[0;7mwc"[m[0;7mSave file under DIFFERENT NAME?                                               [44d Y[m Yes[K[45d[0;7m N[m No    	[0;7m^C[m Cancel[K[43;33H[34h[?25h[?25l[44d[0;7m^G[m Get Help[44;48H[0;7mM-D[m DOS Format[44;95H[0;7mM-A[m Append[44;142H[0;7mM-B[m Backup File[45d[0;7m^C[m Cancel	         [45;48H[0;7mM-M[m Mac Format[45;95H[0;7mM-P[m Prepend[45;142H[0;7m^T[m To FilesMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrcOwc"[m[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;79H[34h[?25h[?25l[43;21H[0;7m                                                          [m[43;21H[34h[?25h[?25l[43;21H[34h[?25h[?25l[0;7mN[m[43;22H[34h[?25h[?25l[0;7m [m[43;21H[34h[?25h[?25l[43;21H[34h[?25h[?25l[43;88H[1K	[0;7m[ Cancelled ][m[K[44;18H[0;7m^O[m Write Out     [0;7m^W[m Where Is      [0;7m^K[m Cut Text[69G[0;7m^J[m Justify[86G[0;7m^C[m Cur Pos       [0;7mM-U[m Undo[44;120H[0;7mM-A[m Mark Text    [0;7mM-][m To Bracket   [0;7mM-▲[m Previous     [0;7m^B[m Back[45;2H[0;7mX[m Exit  [45;18H[0;7m^R[m Read File     [0;7m^\[m Replace       [0;7m^U[m Uncut Text    [0;7m^T[m To Spell[86G[0;7m^_[m Go To Line    [0;7mM-E[m Redo[45;120H[0;7mM-6[m Copy Text    [0;7mM-W[m WhereIs Next [0;7mM-▼[m Next[45;171H[0;7m^F[m ForwardMM[4;22H[34h[?25h[?25lM[34h[?25h[?25l[34h[?25h[?25l[1;180H[0;7mModified[m[3;42r[42;1H
+[1;45r[3;1H[34h[?25h[?25l[K[34h[?25h[?25lalias l="ls -latr"[34h[?25h[?25l[4d[34h[?25h[?25lalias w="ls -la | wc"[43d[K[4;22H[34h[?25h[?25l[44;18H                              [0;7mM-D[m DOS Format [69G          [86G         [0;7mM-A[m Append      [44;120H                      [0;7mM-B[m Backup File[K[45;2H[0;7mC[m Cancel[45;18H                              [0;7mM-M[m Mac Format                  [86G         [0;7mM-P[m Prepend     [45;120H                      [0;7m^T[m To Files[KMM[0;7mFile Name to Write: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.bashrc                                                                                                                   [43;1H[m[43;75H[34h[?25h[?25l[K[1;188H[1;180H[0;7m        [m[43;87H[0;7m[ Wrote 2 lines ][m[44;18H[0;7m^O[m Write Out     [0;7m^W[m Where Is      [0;7m^K[m Cut Text[69G[0;7m^J[m Justify[86G[0;7m^C[m Cur Pos       [0;7mM-U[m Undo[44;120H[0;7mM-A[m Mark Text    [0;7mM-][m To Bracket   [0;7mM-▲[m Previous     [0;7m^B[m Back[45;2H[0;7mX[m Exit  [45;18H[0;7m^R[m Read File     [0;7m^\[m Replace       [0;7m^U[m Uncut Text    [0;7m^T[m To Spell[86G[0;7m^_[m Go To Line    [0;7mM-E[m Redo[45;120H[0;7mM-6[m Copy Text    [0;7mM-W[m WhereIs Next [0;7mM-▼[m Next[45;171H[0;7m^F[m ForwardMM[4;22H[34h[?25h[?25l[43d[J[45;189H[34h[?25h[45;1H[?1049l[?1l>bash-4.4$ source ~/.bashrc
+
+# Aliases test
+# Below is the outout of alias l = "ls -latr"
+bash-4.4$ l
+total 252
+-rw-r--r--  1 DholeAnushkaAmol billa 201169 Sep  8  2023 out.pdf
+-rw-r--r--  1 DholeAnushkaAmol billa    166 Sep 10 22:07 .wget-hsts
+-rw-r--r--  1 DholeAnushkaAmol billa     61 Sep 11 02:19 .gitconfig
+drwxr-xr-x  2 DholeAnushkaAmol billa   4096 Sep 11 04:57 testclone
+drwxr-xr-x  5 DholeAnushkaAmol billa   4096 Sep 12 02:11 cs131
+drwx------  2 DholeAnushkaAmol billa   4096 Sep 12 05:44 .ssh
+-rw-------  1 DholeAnushkaAmol billa   6589 Sep 12 07:51 .bash_history
+drwxr-xr-x 56 root             billa   4096 Sep 17 22:19 ..
+drwx------  5 DholeAnushkaAmol billa   4096 Oct  1 23:11 .
+-rw-r--r--  1 DholeAnushkaAmol billa  12288 Oct  1 23:31 ws3.txt
+-rw-r--r--  1 DholeAnushkaAmol billa     41 Oct  1 23:31 .bashrc
+# Below is the output of alias w = "ls -la | wc"
+bash-4.4$ w
+     12     101     723
+bash-4.4$ l
+total 252
+-rw-r--r--  1 DholeAnushkaAmol billa 201169 Sep  8  2023 out.pdf
+-rw-r--r--  1 DholeAnushkaAmol billa    166 Sep 10 22:07 .wget-hsts
+-rw-r--r--  1 DholeAnushkaAmol billa     61 Sep 11 02:19 .gitconfig
+drwxr-xr-x  2 DholeAnushkaAmol billa   4096 Sep 11 04:57 testclone
+drwxr-xr-x  5 DholeAnushkaAmol billa   4096 Sep 12 02:11 cs131
+drwx------  2 DholeAnushkaAmol billa   4096 Sep 12 05:44 .ssh
+-rw-------  1 DholeAnushkaAmol billa   6589 Sep 12 07:51 .bash_history
+drwxr-xr-x 56 root             billa   4096 Sep 17 22:19 ..
+drwx------  5 DholeAnushkaAmol billa   4096 Oct  1 23:11 .
+-rw-r--r--  1 DholeAnushkaAmol billa  12288 Oct  1 23:31 ws3.txt
+-rw-r--r--  1 DholeAnushkaAmol billa     41 Oct  1 23:31 .bashrc
+bash-4.4$ w
+     12     101     723
+bash-4.4$ grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+grep: downloaded_tweets_*.tsv: No such file or directory
+bash-4.4$ ls
+cs131  out.pdf	testclone  ws3.txt
+bash-4.4$ find ~ -name "downloaded_tweets_*.tsv"
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+bash-4.4$ cd /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2
+bash-4.4$ ls
+cmds.log  counts.txt  downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv  downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+# Top 30 hashtags overall
+# Command: grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+bash-4.4$ grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+   5416 
+   5170 Ukraine
+   4604 auspol
+   4471 COVID19
+   3574 LongCovid
+   2319 GrowthTech
+   1434 BREAKING
+   1421 StandWithUkraine
+   1224 Russia
+   1053 Omicron
+    943 PMQs
+    918 "innovation,futuretech,insurtech"
+    887 Auschwitz
+    833 "FBPE,FollowBackFriday"
+    793 COVID
+    741 cdnpoli
+    719 sayftychat
+    705 AlboForPM
+    656 ???????_?????_???????
+    644 COVIDisAirborne
+    643 Mariupol
+    630 bcpoli
+    617 BA2
+    612 Brexit
+    585 insiders
+    542 Kyiv
+    510 "Russia,Ukraine"
+    510 Covid19
+    462 SOTU
+    437 covid19
+# Top 30 hashtags in retweets
+# Command: grep "type=retweeted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+bash-4.4$ grep "type=retweeted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  74281 
+   2814 Ukraine
+   2724 COVID19
+   2135 LongCovid
+   1170 auspol
+    844 BREAKING
+    774 Russia
+    646 Omicron
+    489 BA2
+    485 COVID
+    450 Auschwitz
+    449 StandWithUkraine
+    445 Mariupol
+    362 PMQs
+    351 Kyiv
+    326 Covid19
+    292 COVIDisAirborne
+    277 MitchPlease
+    267 covid19
+    245 insiders
+    237 "Russia,Ukraine"
+    227 Russian
+    221 SOTU
+    219 sayftychat
+    211 Brexit
+    193 SARSCoV2
+    190 Covid
+    188 Partygate
+    185 Putin
+    184 abc730
+# Top 30 hashtags in replies
+# Command: grep "type=replied_to" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+bash-4.4$ grep "type=replied_to" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+    832 "FBPE,FollowBackFriday"
+    370 Ethiopia
+    319 COVID19
+    314 auspol
+    307 LongCovid
+    285 sayftychat
+    260 SayftyChat
+    249 AlboForPM
+    222 Ukraine
+    136 StandWithUkraine
+    135 MyHealthChat
+    126 LongLA
+    114 amharagenocide
+    106 BoycottATP
+    105 "PutinHitler,StandWithUkraine,PutinHitler,PutinWarCriminal,StopPutinNOW,RussiaSanctions,BoycottRussia"
+    105 BREAKING
+     94 ClimateCrisis
+     93 UPDATE
+     90 COVIDisAirborne
+     86 RepublicanXXXXXXPredators
+     82 Omicron
+     80 Putin
+     64 cdnpoli
+     63 ableg
+     61 FreeNavalnyNow
+     61 bcpoli
+     60 degrowth
+     56 GOPTraitorsToDemocracy
+     55 Ethiopians
+     54 GOPLiesAboutEverything
+# Top 30 hashtags in quotes
+# Command: grep "type=quoted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+bash-4.4$ grep "type=quoted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+    378 auspol
+    319 LongCovid
+    313 COVID19
+    295 Ukraine
+    155 Brexit
+    145 StandWithUkraine
+    144 ???????_?????_???????
+    142 bcpoli
+    128 Omicron
+    112 Tories
+     98 AlboForPM
+     97 cdnpoli
+     94 COVIDisAirborne
+     91 Tory
+     91 ableg
+     82 Russia
+     73 trans
+     68 sayftychat
+     66 ToryBrexit
+     64 BA2
+     62 COVID
+     58 Partygate
+     57 PutinWarCriminal
+     55 KochNetwork
+     54 KYGA22
+     53 PutinsPuppet
+     52 Putin
+     48 CovidIsNotOver
+     44 covid19
+     44 ChefsForUkraine
+bash-4.4$ history > ~/cmds.log
+bash-4.4$ exit
+
+Script done on 2025-10-01 23:44:37-04:00
