@@ -1,0 +1,68 @@
+Assignment #1 – Answers (put at top)
+Name/Username: DholeAnushkaAmol
+
+1) Created A1 and changed into it.
+   Commands: mkdir -p ~/cs131/A1 ; cd ~/cs131/A1
+
+2) Home directory path: /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol
+   Commands used: echo $HOME ; pwd
+
+3) Username and groups:
+   Username: DholeAnushkaAmol
+   Groups: billa
+   Commands used: whoami ; groups
+
+4) Home directory ownership and group members:
+   ls -ld ~ output: drwx------ 7 DholeAnushkaAmol billa 4096 Oct  2 02:37 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol
+   Primary group members (getent): billa:x:8100:billandre,billandreopoulos,jessicawestfall,AhmedTanzilZaki,BalasaiPrasanthBalasaiAkshitaa,ChauKevinHoang,ChenHenry,DangKelly,HlaingNyunEi,KhantEdward,KidaneEdenElias,KimJiSoo,LaoJasmine,LeQuangHuy,LiJiaying,LiRoyce,LyNhuNgan,MaiAnnePhuong,MeloBryan,MesaAleatha,MujeebPuthenveeduAnwar,NguyenHuuHung,NguyenMark,NguyenQuynhPhuocNhu,PatelVirali,PhamTiffanyTuyetNhung,QuanKietTuan,SemsemRussell,SenoAbelJoash,ShelarShivamSuryakant,ShpilbergRoman,TranRaymondLam,VanJeffrey,VishnumolakalaChandrahasSai,VuongByron,WangAndyDinYuan,XuanWilliam,ZamoraTomasAnthony,ChandramouliIyer,JulienArmaganDitto,EthanAlexanderPark,SemharTesfagergshTeklehaimanot,NikkiHuynh,AyeNyeinKyaw,JoshuaHsu,BushraNaveed,ArefiAmirreza,BakshiKhushi,BelyaevIdo,ChowNeilXiang,DelRosarioStephaniMarieSoriano,DholeAnushkaAmol,HtetNayMyo,JuradoEthanHan-Guei,LaiVince,LangerMickAchilles,LeeJustin,LoShannon,ManleyBrendanKunio,MarcosPaulLewis,MollAnthonyMatthew,NadipalliSathvika,NepoEthanRiley,NguyenDavidAnh,NguyenFrederickHoangNguyen,NiedzialekAnia,PanchalVaishnavi,PandaPrateekKumar,PeregrinoGabrielSuzuki,PolAlishaUmesh,QiaoWilliam,RafananManuelTejada,RaiSatyansh,RamosJelinneQuelinaReyes,SaitoPatriciaZhou,ShawSweksha,ShiAliciaDestiny,SiasCarolynaGabriella,SilvasJohnPaulGaite,SultanaliTehkhum,TadinaSean,ThanAndrian,TsoiKevinChiShing,VuJimmy,WangZiming,WongArthurBo,WongMatthewThomas,XavierAlex,XuAlanYiheng,XuSamson,XueErica,ZhaiMarvin,ZhanJeffrey,SenthilSanthosh,MikeChau,VeedhiBhanushali,testuser,testuser2,ShahzadAhmed,FauldsIsabel
+   Commands used: ls -ld ~ ; getent group billa
+
+5) Directory permissions test on "temp":
+   After 'chmod u-x temp':
+   - cd temp: not allowed (Permission denied)
+   - ls / ls -l inside: not allowed
+   - create files: not allowed
+   Commands used: mkdir temp ; chmod u-x temp ; cd temp ; ls ; ls -l ; touch file ; chmod u+x temp
+
+6) Moving vs copying directories:
+   - mv temp2 temp3: allowed
+   - cp temp3 temp4: not allowed unless -r
+   - cp -r temp3 temp4: allowed
+   Commands used: mkdir temp2 ; mv temp2 temp3 ; cp temp3 temp4 ; cp -r temp3 temp4
+
+7) Files with mem/cpu info under /proc:
+   Memory file: /proc/meminfo
+   CPU file: /proc/cpuinfo
+   Commands used: ls /proc | grep -i meminfo ; ls /proc | grep -i cpuinfo
+
+8) Total memory (from /proc/meminfo):
+   MemTotal: 73080768 kB
+   Commands used: head /proc/meminfo ; grep MemTotal /proc/meminfo
+
+9) CPU info (from /proc/cpuinfo):
+   Processors (logical): 256
+   Architecture: ppc64le
+   Model/speed: 
+   Commands used: head /proc/cpuinfo ; tail /proc/cpuinfo ; cat /proc/cpuinfo ; grep -c '^processor' /proc/cpuinfo ; uname -m
+
+10) Tweet files – size and line counts:
+   downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv — Size:  ; Lines: 
+   downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv — Size:  ; Lines: 
+   Commands used: cp (paths given) ; ls -lh ; wc -l
+
+11) Hashtags containing "great" (case-insensitive), per file:
+   downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv — 0
+   downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv — 0
+   Commands used: cut -f4 FILE | grep -i "great" | wc -l
+
+12a) Character encoding (file command):
+   downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv — cannot open `downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv' (No such file or directory)
+   downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv — cannot open `downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv' (No such file or directory)
+   Commands used: file FILE
+
+13) Uniques across both files:
+   13a) Unique users (col 2): 0
+   13b) Unique tweets (col 1): 0
+   13c) Unique hashtag entries (col 4): 0
+        This number is (compare with 13b): [same / more / less — choose]
+   Commands used: cut -f{1,2,4} FILES | sort -u | wc -l
