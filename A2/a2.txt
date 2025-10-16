@@ -1,0 +1,108 @@
+CS131 – Assignment 2
+Name: Anushka Dhole
+
+
+6A/6B/6C (High): <your counts and top 10 user IDs>
+6A/6B/6C (Low):  <your counts and top 10 user IDs>
+
+Notes: I used tmux and the script command to record my work.
+I combined the replies from both tweet files, removed self-replies and duplicate A–B pairs,
+split users by influence (>=3 replies vs <3 replies), and answered 6A–C for both subnetworks.
+
+Script started on 2025-10-16 00:10:46-04:00
+bash-4.4$ ls
+a1.txt	a2.txt	cs131  CS131  out.pdf  test_clone  testclone
+bash-4.4$ ls[Kls
+a1.txt	a2.txt	cs131  CS131  out.pdf  test_clone  testclone
+bash-4.4$ cp ~/CS131/A1/downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv .
+cp: cannot stat '/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/CS131/A1/downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv': No such file or directory
+bash-4.4$ find ~ -type f -name "downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv" 2>/dev/null
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+bash-4.4$ ls -lh
+total 224K
+-rw-r--r-- 1 DholeAnushkaAmol billa 5.6K Oct  2 02:52 a1.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa    0 Oct 16 00:10 a2.txt
+drwxr-xr-x 8 DholeAnushkaAmol billa 4.0K Oct  2 02:49 cs131
+drwxr-xr-x 4 DholeAnushkaAmol billa 4.0K Oct  2 01:50 CS131
+-rw-r--r-- 1 DholeAnushkaAmol billa 197K Sep  8  2023 out.pdf
+drwxr-xr-x 4 DholeAnushkaAmol billa 4.0K Oct  2 01:54 test_clone
+drwxr-xr-x 2 DholeAnushkaAmol billa 4.0K Sep 11 04:57 testclone
+bash-4.4$ cp /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+bash-4.4$ cp /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv .
+bash-4.4$ ls -lh
+total 105M
+-rw-r--r-- 1 DholeAnushkaAmol billa 5.6K Oct  2 02:52 a1.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa    0 Oct 16 00:10 a2.txt
+drwxr-xr-x 8 DholeAnushkaAmol billa 4.0K Oct  2 02:49 cs131
+drwxr-xr-x 4 DholeAnushkaAmol billa 4.0K Oct  2 01:50 CS131
+-rw-r--r-- 1 DholeAnushkaAmol billa  61M Oct 16 00:15 downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa  44M Oct 16 00:15 downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 197K Sep  8  2023 out.pdf
+drwxr-xr-x 4 DholeAnushkaAmol billa 4.0K Oct  2 01:54 test_clone
+drwxr-xr-x 2 DholeAnushkaAmol billa 4.0K Sep 11 04:57 testclone
+bash-4.4$ grep -h 'type=replied_to' downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv > combined_replies.tsv
+bash-4.4$ wc -l combined_replies.tsv
+30398 combined_replies.tsv
+bash-4.4$ awk -F '\t' '{print $2 "\t" $7}' combined_replies.tsv > replies.txt
+bash-4.4$ head -5 replies.txt
+308045021	308045021
+308045021	308045021
+308045021	308045021
+308045021	42052422
+308045021	308045021
+bash-4.4$ head -5 replies.txt[C[C[C[C[C[C[C[C[C[C[48@awk -F '\t' '{print $2 "\t" $7}' combined_replies.tsv >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[41Pwc -l combined_replies.tsv[C[C[C[C[C[C[C[C[C[Cawk -F '\t' '{print $2 "\t" $7}' combined_replies.tsv > replies.txt[C[C[C[C[C[C[C[C[C[Chead -5 replies.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kawk -F '\t' '$1 != $2 {print $0}' replies.txt > replies_nobots.txt
+bash-4.4$ wc -l replies.txt replies_nobots.txt
+  30398 replies.txt
+  22096 replies_nobots.txt
+  52494 total
+bash-4.4$ LC_ALL=C sort -t $'\t' -k1,1 -k2,2 replies_nobots.txt | uniq > replies_nobots_uniq.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KLC_ALL=C sort -t $'\t' -k1,1 -k2,2 replies_nobots.txt | uniq > replies_nobots_uniq.txt
+bash-4.4$ wc -l replies_nobots.txt replies_nobots_uniq.txt
+  22096 replies_nobots.txt
+  16650 replies_nobots_uniq.txt
+  38746 total
+bash-4.4$ cut -f2 replies_nobots_uniq.txt | sort | uniq -c | sort -nr > counts_per_B.txt
+bash-4.4$ awk '$1 >= 3 {print $2}' counts_per_B.txt > high_influence_replies.txt
+bash-4.4$ awk '$1 < 3 {print $2}'  counts_per_B.txt > low_influence_replies.txt
+bash-4.4$ awk 'NR==FNR {hi[$1]=1; next} hi[$2]==1 {print $0}' high_influence_replies.txt replies_nobots_uniq.txt > replies_nobots_uniq_highinfluence.txt
+bash-4.4$ awk 'NR==FNR {lo[$1]=1; next} lo[$2]==1 {print $0}' low_influence_replies.txt replies_nobots_uniq.txt > replies_nobots_uniq_lowinfluence.txt
+bash-4.4$ wc -l replies_nobots_uniq.txt replies_nobots_uniq_highinfluence.txt replies_nobots_uniq_lowinfluence.txt
+ 16650 replies_nobots_uniq.txt
+  5576 replies_nobots_uniq_highinfluence.txt
+ 11074 replies_nobots_uniq_lowinfluence.txt
+ 33300 total
+bash-4.4$ cut -f2 replies_nobots_uniq_highinfluence.txt | sort -u | wc -l     # 6A: distinct userB
+875
+bash-4.4$ cut -f1 replies_nobots_uniq_highinfluence.txt | sort -u | wc -l     # 6B: distinct userA
+2896
+bash-4.4$ cut -f2 replies_nobots_uniq_highinfluence.txt | sort | uniq -c | sort -nr | head -10  # 6C: top 10 users replied to most
+    146 1044285651812839424
+     67 26217297
+     63 1238370241169616897
+     53 1266038659
+     39 1108565574
+     37 18831926
+     36 1462548977367359490
+     35 1298372735383605249
+     35 1243560408025198593
+     33 1201670995435646976
+bash-4.4$ cut -f2 replies_nobots_uniq_lowinfluence.txt | sort -u | wc -l      # 6A
+10152
+bash-4.4$ cut -f1 replies_nobots_uniq_lowinfluence.txt | sort -u | wc -l      # 6B
+2859
+bash-4.4$ cut -f2 replies_nobots_uniq_lowinfluence.txt | sort | uniq -c | sort -nr | head -10   # 6C
+      2 998140573008695296
+      2 989668124894027776
+      2 987475948994875392
+      2 985749294
+      2 98471035
+      2 981425370
+      2 979140480096071680
+      2 978758798176382977
+      2 973161381372440576
+      2 970259974457823232
+bash-4.4$ exit
+
+Script done on 2025-10-16 00:22:22-04:00
