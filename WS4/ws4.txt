@@ -1,0 +1,215 @@
+Script started on 2026-09-11 00:54:27-04:00
+bash-4.4$ cd ~
+bash-4.4$ [Kbash-4.4$ [Kbash-4.4$ [Kbash-4.4$ [Kbash-4.4$ vi ~/.bashrc
+CS131 Worksheet 4 FA25
+Name: Anushka Dhole
+
+Aliases:
+alias l='ls -latr'
+alias w='ls -la | wc'
+
+Question 1: Top 10 users who replied most
+1427 1473384966999569669
+1042 199452338
+699 302984766
+669 578601744
+645 536646582
+639 25868334
+567 309570860
+554 804582780298412032
+487 1387010761994682371
+436 18831926
+
+Question 2: Top 10 users whose tweets received the most replies
+637 25868334
+483 18831926
+441 1266038659
+283 309570860
+239 1044285651812839424
+203 380648579
+118 1229752606714728454
+109 976284925769875456
+108 1028833460
+94 1201670995435646976
+
+Question 3: Top 10 users who retweeted the most
+5349 968008274003005440
+1969 42769304
+1934 309570860
+1628 2189523500
+1439 1275462892591202304
+1370 3308894989
+1349 15227349
+1239 2156874201
+1159 723757332
+1099 2783787047
+
+Question 4: Top 10 users whose tweets were retweeted the most
+1262 1891490382
+813 18831926
+737 1409726425
+620 586291040
+564 409997594
+539 968008274003005440
+528 25868334
+464 163018653
+460 2189523500
+457 777462371149156353
+
+The complete command transcript follows.[?1049h[?1h=[1;36r[23m[24m[0m[H[J[?25l[36;1H"~/.bashrc" 2L, 41C[1;1Halias l="ls -latr"
+alias w="ls -la | wc"
+[1m[34m~                                                                                                                                    [4;1H~                                                                                                                                    [5;1H~                                                                                                                                    [6;1H~                                                                                                                                    [7;1H~                                                                                                                                    [8;1H~                                                                                                                                    [9;1H~                                                                                                                                    [10;1H~                                                                                                                                    [11;1H~                                                                                                                                    [12;1H~                                                                                                                                    [13;1H~                                                                                                                                    [14;1H~                                                                                                                                    [15;1H~                                                                                                                                    [16;1H~                                                                                                                                    [17;1H~                                                                                                                                    [18;1H~                                                                                                                                    [19;1H~                                                                                                                                    [20;1H~                                                                                                                                    [21;1H~                                                                                                                                    [22;1H~                                                                                                                                    [23;1H~                                                                                                                                    [24;1H~                                                                                                                                    [25;1H~                                                                                                                                    [26;1H~                                                                                                                                    [27;1H~                                                                                                                                    [28;1H~                                                                                                                                    [29;1H~                                                                                                                                    [30;1H~                                                                                                                                    [31;1H~                                                                                                                                    [32;1H~                                                                                                                                    [33;1H~                                                                                                                                    [34;1H~                                                                                                                                    [35;1H~                                                                                                                                    [1;1H[34h[?25h
+[1;1H
+[1;1H
+[1;1H[?25l[0m[1;1H[K[2;1H[1m[34m~                                                                                                                                    [0m[36;1H--No lines in buffer--[1;1H[34h[?25h[?25l[36;1H[1m-- INSERT --[0m[36;13H[K[1;1H[34h[?25h[?25la[34h[?25h[?25ll[34h[?25h[?25li[34h[?25h[?25la[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25ll[34h[?25h[?25l [34h[?25h[?25l=[34h[?25h[?25l [34h[?25h[?25l[34h[?25h[?25l[1;9H[K[1;9H[34h[?25h[?25l[34h[?25h[?25l=[34h[?25h[?25l [34h[?25h[?25l'[34h[?25h[?25ll[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25l-[34h[?25h[?25l [34h[?25h[?25l[34h[?25h[?25l[1;14H[K[1;14H[34h[?25h[?25l[34h[?25h[?25l [34h[?25h[?25l-[34h[?25h[?25ll[34h[?25h[?25la[34h[?25h[?25lt[34h[?25h[?25lr[34h[?25h[?25l'[34h[?25h[?25l[2;1H[K[2;1H[34h[?25h[?25la[34h[?25h[?25ll[34h[?25h[?25li[34h[?25h[?25la[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25lw[34h[?25h[?25l=[34h[?25h[?25l [34h[?25h[?25l'[34h[?25h[?25ll[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25l-[34h[?25h[?25ll[34h[?25h[?25la[34h[?25h[?25l|[34h[?25h[?25l[2;17H[K[2;17H[34h[?25h[?25l [34h[?25h[?25l|[34h[?25h[?25l [34h[?25h[?25lw[34h[?25h[?25lc[34h[?25h[?25l'[34h[?25h[36;1H[K[2;22H[?25l[34h[?25h[?25l[36;1H:[34h[?25hwq[?25l".bashrc" 2L, 43C written
+[?1l>[34h[?25h[?1049lbash-4.4$ source ~/.bashrc
+bash: alias: ls -latr: not found
+bash: alias: ls -la | wc: not found
+bash-4.4$ vi ~/.bashrc
+[?1049h[?1h=[1;36r[23m[24m[0m[H[J[?25l[36;1H"~/.bashrc" 2L, 43C[1;1Halias l= 'ls -latr'
+alias w= 'ls -la | wc'
+[1m[34m~                                                                                                                                    [4;1H~                                                                                                                                    [5;1H~                                                                                                                                    [6;1H~                                                                                                                                    [7;1H~                                                                                                                                    [8;1H~                                                                                                                                    [9;1H~                                                                                                                                    [10;1H~                                                                                                                                    [11;1H~                                                                                                                                    [12;1H~                                                                                                                                    [13;1H~                                                                                                                                    [14;1H~                                                                                                                                    [15;1H~                                                                                                                                    [16;1H~                                                                                                                                    [17;1H~                                                                                                                                    [18;1H~                                                                                                                                    [19;1H~                                                                                                                                    [20;1H~                                                                                                                                    [21;1H~                                                                                                                                    [22;1H~                                                                                                                                    [23;1H~                                                                                                                                    [24;1H~                                                                                                                                    [25;1H~                                                                                                                                    [26;1H~                                                                                                                                    [27;1H~                                                                                                                                    [28;1H~                                                                                                                                    [29;1H~                                                                                                                                    [30;1H~                                                                                                                                    [31;1H~                                                                                                                                    [32;1H~                                                                                                                                    [33;1H~                                                                                                                                    [34;1H~                                                                                                                                    [35;1H~                                                                                                                                    [1;1H[34h[?25h[?25l[0m[36;1H[1m-- VISUAL --[0m[36;13H[K[1;1H[34h[?25h[?25l[34h[?25h[?25lA[36;1H[K[1;1H[34h[?25h[?25l[36;1H/.bashrc[34h[?25h[?25l[36;1H[K[1;1H[34h[?25h
+[1;1H[?25l[36;1H:[34h[?25hwq[?25l".bashrc" 2L, 43C written
+[?1l>[34h[?25h[?1049lbash-4.4$ source ~/.bashrc
+bash: Alias: command not found
+bash: alias: ls -la | wc: not found
+bash-4.4$ vi ~/.bashrc
+[?1049h[?1h=[1;36r[23m[24m[0m[H[J[?25l[36;1H"~/.bashrc" 2L, 43C[1;1HAlias l= 'ls -latr'
+alias w= 'ls -la | wc'
+[1m[34m~                                                                                                                                    [4;1H~                                                                                                                                    [5;1H~                                                                                                                                    [6;1H~                                                                                                                                    [7;1H~                                                                                                                                    [8;1H~                                                                                                                                    [9;1H~                                                                                                                                    [10;1H~                                                                                                                                    [11;1H~                                                                                                                                    [12;1H~                                                                                                                                    [13;1H~                                                                                                                                    [14;1H~                                                                                                                                    [15;1H~                                                                                                                                    [16;1H~                                                                                                                                    [17;1H~                                                                                                                                    [18;1H~                                                                                                                                    [19;1H~                                                                                                                                    [20;1H~                                                                                                                                    [21;1H~                                                                                                                                    [22;1H~                                                                                                                                    [23;1H~                                                                                                                                    [24;1H~                                                                                                                                    [25;1H~                                                                                                                                    [26;1H~                                                                                                                                    [27;1H~                                                                                                                                    [28;1H~                                                                                                                                    [29;1H~                                                                                                                                    [30;1H~                                                                                                                                    [31;1H~                                                                                                                                    [32;1H~                                                                                                                                    [33;1H~                                                                                                                                    [34;1H~                                                                                                                                    [35;1H~                                                                                                                                    [1;1H[34h[?25h[?25l[0m[1;1H[K[2;1H[1m[34m~                                                                                                                                    [0m[36;1H--No lines in buffer--[1;1H[34h[?25h[?25l[36;1H[1m-- INSERT --[0m[36;13H[K[1;1H[34h[?25h[?25la[34h[?25h[?25ll[34h[?25h[?25li[34h[?25h[?25la[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25ll[34h[?25h[?25l=[34h[?25h[?25l'[34h[?25h[?25ll[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25l-[34h[?25h[?25ll[34h[?25h[?25la[34h[?25h[?25lt[34h[?25h[?25lr[34h[?25h[?25l'[34h[?25h[?25l[2;1H[K[2;1H[34h[?25h[?25la[34h[?25h[?25ll[34h[?25h[?25li[34h[?25h[?25ls[34h[?25h[?25l[2;4H[K[2;4H[34h[?25h[?25la[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25lw[34h[?25h[?25l=[34h[?25h[?25l'[34h[?25h[?25ll[34h[?25h[?25ls[34h[?25h[?25l [34h[?25h[?25l-[34h[?25h[?25ll[34h[?25h[?25la[34h[?25h[?25l [34h[?25h[?25l|[34h[?25h[?25l [34h[?25h[?25lw[34h[?25h[?25lc[34h[?25h[?25l'[34h[?25h[36;1H[K[2;21H[?25l[34h[?25h[?25l[36;1H:[34h[?25hwq[?25l".bashrc" 2L, 41C written
+[?1l>[34h[?25h[?1049lbash-4.4$ source ~/.bashrc
+bash-4.4$ type l
+l is aliased to `ls -latr'
+bash-4.4$ type w
+w is aliased to `ls -la | wc'
+bash-4.4$ 
+bash-4.4$ w
+     31     272    2266
+bash-4.4$ w
+     31     272    2266
+bash-4.4$ cd ~/cs131/WS4
+bash-4.4$ pwd
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS4
+bash-4.4$ T1=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+bash-4.4$ T2=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+bash-4.4$ ls -l "$T1" "$T2"
+-rw-r--r-- 1 DholeAnushkaAmol billa 63693814 Oct  2  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 45243193 Oct  2  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+bash-4.4$ tr -d '\r' < "$T1" > twitter1.clean.tsv
+bash-4.4$ tr -d '\r' < "$T2" > twitter2.clean.tsv
+bash-4.4$ ls -l twitter1.clean.tsv twitter2.clean.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 63462504 Sep 11 12:15 twitter1.clean.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 45103596 Sep 11 12:15 twitter2.clean.tsv
+bash-4.4$ head -2 twitter1.clean.tsv
+id	author	date	hashtags	text	referenced	in_reply_to_user_id	public_metrics
+1520543208614334465	308045021	2022-04-30 23:18:45+00:00	awesomePeopleOnTwitter	"On top of the chocolate, @benjean2 also included these for my Spanish learning child. I have another child going into Spanish for 2 years and these books, lovingly given, will be out to good use. I hope my kids will be worthy of her kindness. ? #awesomePeopleOnTwitter https://t.co/rGiSjqZXoe"			
+bash-4.4$ head -2 twitter2.clean.tsv
+id	author	date	hashtags	text	referenced	in_reply_to_user_id	public_metrics
+1001517432375316480	379980176	2018-05-29 17:35:37+00:00	disabled	"Disabled people are NOT A BURDEN.     Disabled people are NOT A BURDEN.    Disabled people are NOT A BURDEN.     Disabled people are NOT A BURDEN.         If you are #disabled, you are NOT A BURDEN. You're a human being who deserves respect, compAAAAAAion, independence, a platform, &amp; equal rights."			
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ && NF >= 7 && $7 != "" {print $2}' \
+> twitter1.clean.tsv twitter2.clean.tsv |
+> sort |
+> uniq -c |
+> sort -nr |
+> head -10
+^[[B^[[B^[[B   1427 1473384969699569669
+   1042 199452338
+    699 302984766
+    669 578601744
+    645 536646582
+    639 25868334
+    567 309570860
+    554 804582780298412032
+    487 1387010761994682371
+    436 18831926
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ && NF >= 7 && $7 != "" {print $2}' twitter1.clean.tsv twitter2.clean.tsv | sort | uniq --c | sort -nr | head -10
+   1427 1473384969699569669
+   1042 199452338
+    699 302984766
+    669 578601744
+    645 536646582
+    639 25868334
+    567 309570860
+    554 804582780298412032
+    487 1387010761994682371
+    436 18831926
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ && NF >= 7 && $7 != "" {print $7}' twitter1.clean.tsv twitter2.clean.tsv | sort | uniq --c | sort -nr | head -10
+    637 25868334
+    483 18831926
+    441 1266038659
+    283 309570860
+    239 1044285651812839424
+    203 380648579
+    118 1229752606714728454
+    109 976284925769875456
+    108 1028833460
+     94 1201670995435646976
+bash-4.4$ egrep -i '(^|[[:space:]])RT[[:space:]]*@' twitter1.clean.tsv twitter2.clean.tsv | awk -F '\t' '{print $2}' | sort | uniq -c  | sort -nr | head -10
+   5349 968008274003005440
+   1969 42769304
+   1934 309570860
+   1628 2189523500
+   1439 1275462892591202304
+   1370 3308894989
+   1349 15227349
+   1239 2156874201
+   1159 723757332
+   1099 2783787047
+bash-4.4$ bash-4.4$
+bash: bash-4.4$: command not found
+bash-4.4$ cd ~/cs131/WS4
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ {print $1, $2}' twitter1.clean.tsv twitter2.clean.tsv | sort -n -k1,1 > original_tweets..txt
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ && $1 != "" {print $1, $2}' twitter2.clean.tsv | sort -n -k1,1 > retweet_foreign_keys.txxt
+bash-4.4$ join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+join: original_tweets.txt:5: is not sorted: 2565495732 34116377
+join: retweet_foreign_keys.txt:3: is not sorted: 2565495732 34116377
+   1262 1891490382
+    813 18831926
+    737 1409726425
+    620 586291040
+    564 409997594
+    539 968008274003005440
+    528 25868334
+    464 163018653
+    460 2189523500
+    457 777462371149156353
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ {print $1, $2}' twitter1.clean.tsv twitter2.clean.tsv | LC_ALL=C sort -k1,1 > original_ttweets.txt
+bash-4.4$ awk -F '\t' '$1 !~ /^(id|tweetid)$/ && $1 != "" {print $1, $2}' twitter2.clean.tsv | LC_ALL=C sort -k1,1 > retweet_foreign_kkeys.txt
+bash-4.4$ join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+join: original_tweets.txt:4: is not sorted: 1001517432375316480 379980176
+join: retweet_foreign_keys.txt:2: is not sorted: 1001517432375316480 379980176
+   1262 1891490382
+    813 18831926
+    737 1409726425
+    620 586291040
+    564 409997594
+    539 968008274003005440
+    528 25868334
+    464 163018653
+    460 2189523500
+    457 777462371149156353
+bash-4.4$ LC_ALL=C join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+   1262 1891490382
+    813 18831926
+    737 1409726425
+    620 586291040
+    564 409997594
+    539 968008274003005440
+    528 25868334
+    464 163018653
+    460 2189523500
+    457 777462371149156353
+bash-4.4$ LC_ALL=C join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+   1262 1891490382
+    813 18831926
+    737 1409726425
+    620 586291040
+    564 409997594
+    539 968008274003005440
+    528 25868334
+    464 163018653
+    460 2189523500
+    457 777462371149156353
+bash-4.4$ exit
+
+Script done on 2026-09-11 18:09:12-04:00
