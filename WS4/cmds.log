@@ -1,6 +1,3 @@
-    1  passwd
-    2  passwdd
-    3  passwd
     4  wget -O out.pdf https://tinyurl.com/yy94jltt
     5  ls
     6  cd ~
@@ -20,8 +17,6 @@
    20  whoami
    21  cd ~DholeAnushkaAmol
    22  ls
-   23  passwd
-   24  csothersdont
    25  whoami
    26  pwd
    27  wget -O out.pdf https://tinyurl.com/yy94jltt
@@ -52,7 +47,6 @@
    52  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
    53  git remote -v
    54  git push -u origin main
-   55  git remote set-url origin "https://sjsucs131-admin:<YOUR_API_TOKEN>@bitbucket.org/anushka_cs131/cs131.git"
    56  cd ~/cs131
    57  git remote remove origin
    58  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
@@ -87,10 +81,8 @@
    87  git pull --rebase origin main
    88  cd ~/cs131
    89  git remote -v
-   90  git remote set-url origin https://x-token-auth@bitbucket.org/anushka_cs131/cs131.git
    91  git pull --rebase origin main
    92  cd ~/cs131
-   93  git remote set-url origin "https://x-token-auth:ATCTT3xFfGN0qozOXq_9SeEpbBW0UX9lmGt1nqW_USH3C-qc3yHFabRWcXB-7PVObkBsYeG0GFMxzw0tZ9WuFn9JeprcB9Y6e9Iflf78EGnV0Ys4zqyevFqWMCOSiYVVMt-t-IQqRJDdgdSC9HnekeTnti52Ye-DDSozikf8sDkG6qXXKtN3Yxw=16083A81@bitbucket.org/anushka_cs131/cs131.git"
    94  git pull --rebase origin main
    95  git push -u origin main
    96  git remote set-url origin "https://bitbucket.org/anushka_cs131/cs131.git"
