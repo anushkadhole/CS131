@@ -1,0 +1,243 @@
++
+Script started on 2026-09-12 14:23:27-04:00
+$ T1=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+$ T2=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+$ 
+$ cp -v "$T1" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+
+ls -lh downloaded_tweets_extend*.tsv'/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv' -> 'downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv'
+$ cp -v "$T2" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+'/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv' -> 'downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv'
+$ 
+$ ls -lh downloaded_tweets_extend*.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 61M Sep 12 14:23 downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 44M Sep 12 14:23 downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+$ F1=downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+$ F2=downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+$ 
+$ grep -h 'type=retweeted' "$F1" "$F2" |
+> awk -F '\t' '
+> {
+>     if (match($0, /ReferencedTweet id=[0-9]+ type=retweeted/)) {
+>         ref=substr($0,RSTART,RLENGTH)
+>         sub(/^ReferencedTweet id=/,"",ref)
+>         sub(/ type=retweeted$/,"",ref)
+>         print ref "\t" $2
+>     }
+> }' |
+> LC_ALL=C sort -t $'\t' -k1,1 > retweet_refs.sorted
+$ wc -l retweet_refs.sorted
+178045 retweet_refs.sorted
+$ head retweet_refs.sorted
+1001517432375316480	723757332
+1004656199885836288	631283641
+1006602334326095873	1493645432244695041
+1010314471586369536	3130247577
+1012937065317560321	790139850
+1016311771710283776	536646582
+1017456403961835520	940778288871542786
+1017953171589627905	790139850
+1023111834587607041	1387010761994682371
+1023451913491107842	2189523500
+$ awk -F '\t' '
+> $1 !~ /^(id|tweetid)$/ && $1 != "" && $2 != "" {
+>     print $1 "\t" $2
+> }' "$F1" "$F2" |
+> LC_ALL=C sort -t $'\t' -k1,1 -u > id_to_userB.sorted
+$ wc -l id_to_userB.sorted
+372629 id_to_userB.sorted
+$ head id_to_userB.sorted
+1001517432375316480	379980176
+1004656199885836288	457060718
+1006602334326095873	2360816491
+1010314471586369536	71895505
+1012937065317560321	UNKNOWNUSER139564
+1016311771710283776	827587823201034241
+1017456403961835520	140496030
+1017953171589627905	790139850
+1023111834587607041	202615056
+1023451913491107842	2189523500
+$ LC_ALL=C join -t $'\t' -1 1 -2 1 id_to_userB.sorted retweet_refs.sorted |
+> awk -F '\t' '{print $3 "\t" $2}' |
+> LC_ALL=C sort -t $'\t' -k2,2 > retweets.txt
+$ wc -l retweets.txt
+ bad+0}' retweet178045 retweets.txt
+$ head retweets.txt
+4757894056	1000005001
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+1044285651812839424	1000050134535860224
+$ awk -F '\t' 'NF != 2 {bad++} END {print "Malformed lines:", bad+0}' retweets.txt
+Malformed lines: 0
+$ awk -F '\t' '$1 != $2' retweets.txt > retweets_nobots.txt
+$ awk -F '\t' '$1 == $2 {count++} END {print "Self-pairs remaining:", count+0}' retweets_nobots.txt
+Self-pairs remaining: 0
+$ LC_ALL=C sort -t $'\t' -k1,1 -k2,2 retweets_nobots.txt |
+> uniq > retweets_nobots_uniq.txt
+$ wc -l retweets.txt retweets_nobots.txt retweets_nobots_uniq.txt
+  178045 retweets.txt
+  175965 retweets_nobots.txt
+   90080 retweets_nobots_uniq.txt
+  444090 total
+$ LC_ALL=C sort retweets_nobots_uniq.txt | uniq -d | head
+$ LC_ALL=C sort retweets_nobots_uniq.txt | uniq -d | head$ wc -l retweets.txt retweets_nobots.txt retweets_nobots_uniq.txt$ LC_ALL=C sort -t $'\t' -k1,1 -k2,2 retweets_nobots.txt | uniq > retweets_nobots_uniq.txt$ awk -F '\t' '$1 == $2 {count++} END {print "Self-pairs remaining:", count+0}' retweets_nobots.txt$ awk -F '\t' '$1 != $2' retweets.txt > retweets_nobots.txt                                        $ awk -F '\t' '$1 == $2 {count++} END {print "Self-pairs remaining:", count+0}' retweets_nobots.txt$ LC_ALL=C sort -t $'\t' -k1,1 -k2,2 retweets_nobots.txt | uniq > retweets_nobots_uniq.txt         $ wc -l retweets.txt retweets_nobots.txt retweets_nobots_uniq.txt                         $ LC_ALL=C sort retweets_nobots_uniq.txt | uniq -d | head        $                                                        $ cut -f2 retweets_nobots_uniq.txt |
+> sort |
+> uniq -c |
+> awk '$1 >= 3 {print $2}' > high_influence_retweets.txt
+$ cut -f2 retweets_nobots_uniq.txt |
+> sort |
+> uniq -c |
+> awk '$1 < 3 {print $2}' > low_influence_retweets.txt
+$ wc -l high_influence_retweets.txt low_influence_retweets.txt
+ad low_influence  5866 high_influence_retweets.txt
+ 43145 low_influence_retweets.txt
+ 49011 total
+$ head high_influence_retweets.txt
+1000050134535860224
+1000499544
+1001499086162485248
+1001663707045421058
+1001769760596676609
+1002260322923794432
+1002666643040894978
+1003107003693137921
+1003662615661436929
+100380798
+$ head low_influence_retweets.txt
+1000005001
+1000078041421434880
+1000122949645586432
+1000198128526659584
+1000218878
+1000230050736701441
+1000413742423781376
+1000416326194810881
+1000417870814351365
+1000563587809624065
+$ awk -F '\t' '
+> NR == FNR {high[$1]=1; next}
+> ($2 in high) {print}
+> ' high_influence_retweets.txt retweets_nobots_uniq.txt |
+> sort -t $'\t' -k2,2 > retweets_nobots_uniq_highinfluence.txt
+$ awk -F '\t' '
+> NR == FNR {low[$1]=1; next}
+> ($2 in low) {print}
+> ' low_influence_retweets.txt retweets_nobots_uniq.txt |
+> sort -t $'\t' -k2,2 > retweets_nobots_uniq_lowinfluence.txt
+$ TOTAL=$(wc -l < retweets_nobots_uniq.txt)
+etweets_nobots_uniq_lowinfluence.txt)
+
+echo "Unique total: $TOTAL"
+echo "High total: $HIGH"
+echo "Low total: $LOW"
+
+if [ "$TOTAL" -eq $((HIGH + LOW)) ]; then
+    echo "PASS"
+el$ HIGH=$(wc -l < retweets_nobots_uniq_highinfluence.txt)
+se
+    echo "FAI$ LOW=$(wc -l < retweets_nobots_uniq_lowinfluence.txt)
+$ 
+$ echo "Unique total: $TOTAL"
+Unique total: 90080
+$ echo "High total: $HIGH"
+High total: 41715
+$ echo "Low total: $LOW"
+Low total: 48365
+$ 
+$ if [ "$TOTAL" -eq $((HIGH + LOW)) ]; then
+>     echo "PASS"
+> else
+>     echo "FAIL"
+> fi
+PASS
+$ wc -l retweets_nobots_uniq_highinfluence.txt retweets_nobots_uniq_lowinfluence.txt
+  41715 retweets_nobots_uniq_highinfluence.txt
+  48365 retweets_nobots_uniq_lowinfluence.txt
+  90080 total
+$ head retweets_nobots_uniq_highinfluence.txt
+1044285651812839424	1000050134535860224
+1478768877962248197	1000050134535860224
+2783787047	1000050134535860224
+2189523500	1000499544
+2574271742	1000499544
+433060763	1000499544
+846389432	1000499544
+1071890635462975490	1001499086162485248
+1249734659237437440	1001499086162485248
+1393331109451247616	1001499086162485248
+$ head retweets_nobots_uniq_lowinfluence.txt
+4757894056	1000005001
+1044285651812839424	1000078041421434880
+29447428	1000122949645586432
+16352975	1000198128526659584
+875023529892335616	1000218878
+322622115	1000230050736701441
+1044285651812839424	1000413742423781376
+131042172	1000416326194810881
+24955120	1000417870814351365
+614600545	1000563587809624065
+$ echo "Question 6A - High influence"
+Question 6A - High influence
+$ cut -f2 retweets_nobots_uniq_highinfluence.txt | sort -u | wc -l
+tion 6A - Low influence"
+cut -f2 retweets_nobots_uniq_lowinfluence.txt | sort -u | wc -l5866
+$ 
+$ echo "Question 6A - Low influence"
+Question 6A - Low influence
+$ cut -f2 retweets_nobots_uniq_lowinfluence.txt | sort -u | wc -l
+43145
+$ echo "Question 6B - High influence"
+Question 6B - High influence
+$ cut -f1 retweets_nobots_uniq_highinfluence.txt | sort -u | wc -l
+tion 6B - Low influence"
+cut -f1 retweets_nobots_uniq_lowinfluence.txt | sort -u | wc -l377
+$ 
+$ echo "Question 6B - Low influence"
+Question 6B - Low influence
+$ cut -f1 retweets_nobots_uniq_lowinfluence.txt | sort -u | wc -l
+382
+$ echo "Question 6C - High influence top 10"
+Question 6C - High influence top 10
+$ cut -f2 retweets_nobots_uniq_highinfluence.txt |
+> sort |
+> uniq -c |
+> sort -nr |
+> head -10
+    194 18831926
+    131 163018653
+    130 1891490382
+    118 1219232377605644289
+    107 720139699
+    102 67934675
+     98 1120633726478823425
+     90 380648579
+     79 1296279134079823872
+     72 87358629
+$ echo "Question 6C - Low influence top 10"
+Question 6C - Low influence top 10
+$ cut -f2 retweets_nobots_uniq_lowinfluence.txt |
+> sort |
+> uniq -c |
+> sort -nr |
+> head -10
+      2 UNKNOWNUSER145565
+      2 UNKNOWNUSER145547
+      2 UNKNOWNUSER145531
+      2 UNKNOWNUSER145523
+      2 UNKNOWNUSER145478
+      2 UNKNOWNUSER145473
+      2 UNKNOWNUSER145423
+      2 UNKNOWNUSER145401
+      2 UNKNOWNUSER145366
+      2 UNKNOWNUSER145364
+$ 
+$ exit
+
+Script done on 2026-09-12 14:54:16-04:00
