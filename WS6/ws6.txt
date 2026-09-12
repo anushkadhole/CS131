@@ -1,0 +1,63 @@
+Worksheet 6
+
+Input dataset:
+../A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+
+Total input lines: 231302
+
+The input file was randomly shuffled with shuf. The head command selected
+the required number of lines, and wc -l verified each sample size.
+
+Commands used:
+
+F=../A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+TOTAL=$(wc -l < "$F")
+N=$(awk -v n="$TOTAL" 'BEGIN {printf "%d", n/100}')
+shuf < "$F" | head -n "$N" > sample_1.txt
+wc -l sample_1.txt
+
+For loop used for 1% through 10%:
+
+for x in $(seq 1 10)
+do
+    N=$(awk -v n="$TOTAL" -v p="$x" 'BEGIN {printf "%d", n*p/100}')
+    OUT="sample_${x}.txt"
+    shuf < "$F" | head -n "$N" > "$OUT"
+    ln -sfn "$OUT" "subsam.$x"
+    echo "Percentage: ${x}%"
+    echo -n "Expected: "
+    echo "$N"
+    echo -n "Actual:   "
+    wc -l < "$OUT"
+done
+
+Verified results:
+
+Percentage    Expected    Actual
+1%             2313        2313
+2%             4626        4626
+3%             6939        6939
+4%             9252        9252
+5%            11565       11565
+6%            13878       13878
+7%            16191       16191
+8%            18504       18504
+9%            20817       20817
+10%           23130       23130
+
+Symbolic links created:
+
+subsam.1  -> sample_1.txt
+subsam.2  -> sample_2.txt
+subsam.3  -> sample_3.txt
+subsam.4  -> sample_4.txt
+subsam.5  -> sample_5.txt
+subsam.6  -> sample_6.txt
+subsam.7  -> sample_7.txt
+subsam.8  -> sample_8.txt
+subsam.9  -> sample_9.txt
+subsam.10 -> sample_10.txt
+
+Command history saved with:
+
+history > cmds.log

@@ -1,0 +1,564 @@
+    1  passwd
+    2  passwdd
+    3  passwd
+    4  wget -O out.pdf https://tinyurl.com/yy94jltt
+    5  ls
+    6  cd ~
+    7  mkdir cs131
+    8  cd cs131
+    9  git init
+   10  git config --global user.email "yourSJSUemail@sjsu.edu"
+   11  git config --global user.email "anushka.dhole@sjsu.edu"
+   12  git config --global user.name "Anushka Amol Dhole"
+   13  mkdir WS1
+   14  cd WS1
+   15  history > cmds.log
+   16  ls -latr
+   17  git add cmds.log
+   18  git commit -m "First commit for Worksheet 1"
+   19  pwd
+   20  whoami
+   21  cd ~DholeAnushkaAmol
+   22  ls
+   23  passwd
+   24  csothersdont
+   25  whoami
+   26  pwd
+   27  wget -O out.pdf https://tinyurl.com/yy94jltt
+   28  ls -latr out.pdf
+   29  /'
+   30  4]|
+   31  ]|
+   32  cd ~
+   33  mkdir cs131 && cd cs131
+   34  cd ~/cs131
+   35  git init
+   36  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   37  git config --global user.name "Anushka Dhole"
+   38  git config --global user.email "anushka.dhole@sjsu.edu"
+   39  mkdir WS1
+   40  cd WS1
+   41  history > cmds.log
+   42  ls -latr
+   43  cd ~/cs131
+   44  git add WS1/cmds.log
+   45  git commit -m "WS1: add cmds.log"
+   46  git branch -M main
+   47  git push -u origin main
+   48  git remote -v
+   49  git push -u origin main
+   50  cd ~/cs131
+   51  git remote remove origin
+   52  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   53  git remote -v
+   54  git push -u origin main
+   55  git remote set-url origin "https://sjsucs131-admin:<YOUR_API_TOKEN>@bitbucket.org/anushka_cs131/cs131.git"
+   56  cd ~/cs131
+   57  git remote remove origin
+   58  git remote add origin https://bitbucket.org/anushka_cs131/cs131.git
+   59  git remote -v
+   60  git push -u origin main
+   61  cd ~/cs131
+   62  ls -R
+   63  cd ~/cs131
+   64  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   65  git remote -v
+   66  git push -u origin main
+   67  cd ~/cs131
+   68  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   69  git push -u origin main
+   70  cd ~/cs131
+   71  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   72  git push -u origin main
+   73  cd ~/cs131
+   74  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   75  git push -u origin main
+   76  git config --global user.name  "Anushka Dhole"
+   77  git config --global user.email "anushka.dhole@sjsu.edu"
+   78  cd ~/cs131
+   79  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+   80  git remote -v
+   81  git push -u origin main
+   82  git pull --rebase origin main
+   83  cd ~/cs131
+   84  git remote -v
+   85  cd ~/cs131
+   86  git remote -v
+   87  git pull --rebase origin main
+   88  cd ~/cs131
+   89  git remote -v
+   90  git remote set-url origin https://x-token-auth@bitbucket.org/anushka_cs131/cs131.git
+   91  git pull --rebase origin main
+   92  cd ~/cs131
+   93  git remote set-url origin "https://x-token-auth:ATCTT3xFfGN0qozOXq_9SeEpbBW0UX9lmGt1nqW_USH3C-qc3yHFabRWcXB-7PVObkBsYeG0GFMxzw0tZ9WuFn9JeprcB9Y6e9Iflf78EGnV0Ys4zqyevFqWMCOSiYVVMt-t-IQqRJDdgdSC9HnekeTnti52Ye-DDSozikf8sDkG6qXXKtN3Yxw=16083A81@bitbucket.org/anushka_cs131/cs131.git"
+   94  git pull --rebase origin main
+   95  git push -u origin main
+   96  git remote set-url origin "https://bitbucket.org/anushka_cs131/cs131.git"
+   97  git remote -v
+   98  mkdir ~/testclone && cd ~/testclone
+   99  git clone https://bitbucket.org/anushka_cs131/cs131.git cs131_Anushka_Dhole
+  100  cd ~
+  101  cd cs131
+  102  mkdir WS2
+  103  cd WS2
+  104  ls -lh /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA | grep CLEAN.tsv
+  105  cp -vn /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+  106  cp -vn /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv .
+  107  ls -lh
+  108  grep "replied_to" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc
+  109  grep "replied_to" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc
+  110  grep "retweeted" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc
+  111  grep "retweeted" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc
+  112  echo "WS2 counts for 'replied_to' and 'retweeted'" > counts.txt
+  113  echo "" >> counts.txt
+  114  echo "replied_to — downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  115  grep "replied_to" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  116  echo "" >> counts.txt
+  117  echo "replied_to — downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  118  grep "replied_to" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  119  echo "" >> counts.txt
+  120  echo "retweeted — downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  121  grep "retweeted" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  122  echo "" >> counts.txt
+  123  echo "retweeted — downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv (lines words bytes):" >> counts.txt
+  124  grep "retweeted" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | wc >> counts.txt
+  125  cat counts.txt
+  126  nano counts.txt
+  127  cat counts.txt
+  128  history > cmds.log
+  129  cd ~/cs131/WS2
+  130  ls -lh
+  131  head counts.txt
+  132  cd ~/cs131
+  133  echo "*.tsv" >> .gitignore
+  134  git add .gitignore
+  135  git commit -m "Ignore dataset files"
+  136  cd WS2
+  137  git rm --cached *.tsv
+  138  git commit -m "Remove dataset files from Git tracking"
+  139  cd ~/cs131
+  140  git add WS2/counts.txt WS2/cmds.log
+  141  git commit -m "Worksheet 2 submission"
+  142  git push origin main
+  143  cd ~/cs131
+  144  git add WS2/counts.txt WS2/cmds.log
+  145  git status
+  146  git remote -v
+  147  git push origin main
+  148  git remote -v
+  149  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+  150  git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  151  cd ~/cs131
+  152  git remote -v
+  153  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+  154  git config --global --unset credential.helper || true
+  155  git credential-cache exit || true
+  156  cd ~/cs131
+  157  git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  158  cd ~/cs131
+  159  git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  160  cd ~/cs131
+  161  git remote set-url origin https://bitbucket.org/anushka_cs131/cs131.git
+  162  git remote -v
+  163  git config --global --unset credential.helper || true
+  164  git credential-cache exit || true
+  165  GIT_ASKPASS= git push https://anushka_cs131@bitbucket.org/anushka_cs131/cs131.git main
+  166  cd ~/cs131
+  167  git remote -v
+  168  git status
+  169  cd ~/cs131
+  170  git remote -v
+  171  git config --global --unset credential.helper || true
+  172  git credential-cache exit || true
+  173  git push origin main
+  174  cd ~
+  175  cd cs131
+  176  mkdir -p WS2
+  177  cd WS2
+  178  cp -vn /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+  179  cd ~/cs131
+  180  ls WS2
+  181  git log -n 1
+  182  git status
+  183  git push origin main
+  184  cd ~/cs131
+  185  git remote -v
+  186  git config --global --unset credential.helper || true
+  187  git credential-cache exit || true
+  188  git push origin main
+  189  ssh-keygen -t ed25519 -C "anushka_cs131 CS131 key"
+  190  cat ~/.ssh/id_ed25519.pub
+  191  ssh-keygen -t ed25519 -C "anushka_cs131 CS131 key"
+  192  cat /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/.ssh/id_ed25519.pub
+  193  cd ~/cs131
+  194  git remote set-url origin git@bitbucket.org:anushka_cs131/cs131.git
+  195  git remote -v
+  196  ssh -T git@bitbucket.org
+  197  cd ~/cs131
+  198  git push origin main
+  199  counts.txt
+  200  cmds.log
+  201  cd ~/cs131/WS2
+  202  ls -lh
+  203  head -n 10 counts.txt
+  204  nano ~/.bashrc
+  205  source ~/.bashrc
+  206  l
+  207  w
+  208  l
+  209  w
+  210  grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  211  ls
+  212  find ~ -name "downloaded_tweets_*.tsv"
+  213  cd /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2
+  214  ls
+  215  grep "#" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  216  grep "type=retweeted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  217  grep "type=replied_to" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  218  grep "type=quoted" downloaded_tweets_*.tsv | cut -f4 | sort | uniq -c | sort -nr | head -30
+  219  history > ~/cmds.log
+  220  script ws3.txt
+  221  nano ~/ws3.txt
+  222  tmux new-session -s homework
+  223  mkdir -p ~/cs131/A1
+  224  cd ~/cs131/A1
+  225  echo $HOME
+  226  pwd
+  227  whoami
+  228  groups
+  229  ls -ld ~
+  230  getent group billa
+  231  cd ~/cs131/A1
+  232  mkdir -p temp
+  233  chmod u-x temp
+  234  cd temp
+  235  ls             
+  236  ls -l
+  237  touch test
+  238  cd ..
+  239  chmod u+x temp
+  240  mkdir -p temp2
+  241  mv temp2 temp3
+  242  cp temp3 temp4
+  243  cp -r temp3 temp4
+  244  ls /proc | grep -i meminfo
+  245  ls /proc | grep -i cpuinfo
+  246  head /proc/meminfo | sed -n '1p'
+  247  grep MemTotal /proc/meminfo
+  248  head /proc/cpuinfo
+  249  tail /proc/cpuinfo
+  250  cat /proc/cpuinfo | grep -m1 "model name"
+  251  grep -c '^processor' /proc/cpuinfo
+  252  uname -m                              
+  253  cp /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+  254  cp /mnt/scratch/CS131_billa/billandreopoulos/CS131_wba/DATA/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv .
+  255  ls -lh downloaded_tweets_extend_*.tsv
+  256  du -h downloaded_tweets_extend_*.tsv
+  257  wc -l downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  258  wc -l downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+  259  cut -f4 downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv | grep -i "great" | wc -l
+  260  cut -f4 downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv | grep -i "great" | wc -l
+  261  file downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  262  file downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+  263  # 13a unique users (2nd column across both files)
+  264  cut -f2 downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv   | sort -u | wc -l
+  265  # 13b unique tweets (1st column)
+  266  cut -f1 downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv   | sort -u | wc -l
+  267  # 13c unique hashtag entries (4th column values)
+  268  cut -f4 downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv   | sort -u | wc -l
+  269  exit   # or press Ctrl+D
+  270  script a1.txt
+  271  cd ~/cs131/A1
+  272  FHOME="$(echo $HOME)"
+  273  UNAME="$(whoami)"
+  274  GRPS="$(groups)"
+  275  OWNGRP="$(id -gn)"
+  276  HOMELS="$(ls -ld ~)"
+  277  GRPMEMS="$(getent group "$OWNGRP")"
+  278  MEMTOTAL="$(grep MemTotal /proc/meminfo | awk '{$1=$1}1')"
+  279  NPROC="$(grep -c '^processor' /proc/cpuinfo)"
+  280  ARCH="$(uname -m)"
+  281  CPUMODEL="$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2- | sed 's/^ //')"
+  282  F1="downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv"
+  283  F2="downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv"
+  284  S1="$(ls -lh "$F1" | awk '{print $5}')"
+  285  S2="$(ls -lh "$F2" | awk '{print $5}')"
+  286  L1="$(wc -l < "$F1")"
+  287  L2="$(wc -l < "$F2")"
+  288  G1="$(cut -f4 "$F1" | grep -i "great" | wc -l)"
+  289  G2="$(cut -f4 "$F2" | grep -i "great" | wc -l)"
+  290  E1="$(file -b "$F1")"
+  291  E2="$(file -b "$F2")"
+  292  U_USERS="$(cut -f2 "$F1" "$F2" | sort -u | wc -l)"
+  293  U_TWEETS="$(cut -f1 "$F1" "$F2" | sort -u | wc -l)"
+  294  U_TAGS="$(cut -f4 "$F1" "$F2" | sort -u | wc -l)"
+  295  cat > answers.tmp <<EOF
+  296  Assignment #1 – Answers (put at top)
+  297  Name/Username: $UNAME
+  298  1) Created A1 and changed into it.
+  299     Commands: mkdir -p ~/cs131/A1 ; cd ~/cs131/A1
+  300  2) Home directory path: $FHOME
+  301     Commands used: echo \$HOME ; pwd
+  302  3) Username and groups:
+  303     Username: $UNAME
+  304     Groups: $GRPS
+  305     Commands used: whoami ; groups
+  306  4) Home directory ownership and group members:
+  307     ls -ld ~ output: $HOMELS
+  308     Primary group members (getent): $GRPMEMS
+  309     Commands used: ls -ld ~ ; getent group $OWNGRP
+  310  5) Directory permissions test on "temp":
+  311     After 'chmod u-x temp':
+  312     - cd temp: not allowed (Permission denied)
+  313     - ls / ls -l inside: not allowed
+  314     - create files: not allowed
+  315     Commands used: mkdir temp ; chmod u-x temp ; cd temp ; ls ; ls -l ; touch file ; chmod u+x temp
+  316  6) Moving vs copying directories:
+  317     - mv temp2 temp3: allowed
+  318     - cp temp3 temp4: not allowed unless -r
+  319     - cp -r temp3 temp4: allowed
+  320     Commands used: mkdir temp2 ; mv temp2 temp3 ; cp temp3 temp4 ; cp -r temp3 temp4
+  321  7) Files with mem/cpu info under /proc:
+  322     Memory file: /proc/meminfo
+  323     CPU file: /proc/cpuinfo
+  324     Commands used: ls /proc | grep -i meminfo ; ls /proc | grep -i cpuinfo
+  325  8) Total memory (from /proc/meminfo):
+  326     $MEMTOTAL
+  327     Commands used: head /proc/meminfo ; grep MemTotal /proc/meminfo
+  328  9) CPU info (from /proc/cpuinfo):
+  329     Processors (logical): $NPROC
+  330     Architecture: $ARCH
+  331     Model/speed: $CPUMODEL
+  332     Commands used: head /proc/cpuinfo ; tail /proc/cpuinfo ; cat /proc/cpuinfo ; grep -c '^processor' /proc/cpuinfo ; uname -m
+  333  10) Tweet files – size and line counts:
+  334     $F1 — Size: $S1 ; Lines: $L1
+  335     $F2 — Size: $S2 ; Lines: $L2
+  336     Commands used: cp (paths given) ; ls -lh ; wc -l
+  337  11) Hashtags containing "great" (case-insensitive), per file:
+  338     $F1 — $G1
+  339     $F2 — $G2
+  340     Commands used: cut -f4 FILE | grep -i "great" | wc -l
+  341  12a) Character encoding (file command):
+  342     $F1 — $E1
+  343     $F2 — $E2
+  344     Commands used: file FILE
+  345  13) Uniques across both files:
+  346     13a) Unique users (col 2): $U_USERS
+  347     13b) Unique tweets (col 1): $U_TWEETS
+  348     13c) Unique hashtag entries (col 4): $U_TAGS
+  349          This number is (compare with 13b): [same / more / less — choose]
+  350     Commands used: cut -f{1,2,4} FILES | sort -u | wc -l
+  351  EOF
+  352  # prepend this answer block to the top of a1.txt
+  353  cat a1.txt >> answers.tmp
+  354  mv answers.tmp a1.txt
+  355  ls
+  356  cp ~/CS131/A1/downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv .
+  357  find ~ -type f -name "downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv" 2>/dev/null
+  358  ls -lh
+  359  cp /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv .
+  360  cp /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv .
+  361  ls -lh
+  362  grep -h 'type=replied_to' downloaded_tweets_extend*_nolf.ASCII.CLEAN.tsv > combined_replies.tsv
+  363  wc -l combined_replies.tsv
+  364  awk -F '\t' '{print $2 "\t" $7}' combined_replies.tsv > replies.txt
+  365  head -5 replies.txt
+  366  awk -F '\t' '$1 != $2 {print $0}' replies.txt > replies_nobots.txt
+  367  wc -l replies.txt replies_nobots.txt
+  368  LC_ALL=C sort -t $'\t' -k1,1 -k2,2 replies_nobots.txt | uniq > replies_nobots_uniq.txt
+  369  wc -l replies_nobots.txt replies_nobots_uniq.txt
+  370  cut -f2 replies_nobots_uniq.txt | sort | uniq -c | sort -nr > counts_per_B.txt
+  371  awk '$1 >= 3 {print $2}' counts_per_B.txt > high_influence_replies.txt
+  372  awk '$1 < 3 {print $2}'  counts_per_B.txt > low_influence_replies.txt
+  373  awk 'NR==FNR {hi[$1]=1; next} hi[$2]==1 {print $0}' high_influence_replies.txt replies_nobots_uniq.txt > replies_nobots_uniq_highinfluence.txt
+  374  awk 'NR==FNR {lo[$1]=1; next} lo[$2]==1 {print $0}' low_influence_replies.txt replies_nobots_uniq.txt > replies_nobots_uniq_lowinfluence.txt
+  375  wc -l replies_nobots_uniq.txt replies_nobots_uniq_highinfluence.txt replies_nobots_uniq_lowinfluence.txt
+  376  cut -f2 replies_nobots_uniq_highinfluence.txt | sort -u | wc -l     # 6A: distinct userB
+  377  cut -f1 replies_nobots_uniq_highinfluence.txt | sort -u | wc -l     # 6B: distinct userA
+  378  cut -f2 replies_nobots_uniq_highinfluence.txt | sort | uniq -c | sort -nr | head -10  # 6C: top 10 users replied to most
+  379  cut -f2 replies_nobots_uniq_lowinfluence.txt | sort -u | wc -l      # 6A
+  380  cut -f1 replies_nobots_uniq_lowinfluence.txt | sort -u | wc -l      # 6B
+  381  cut -f2 replies_nobots_uniq_lowinfluence.txt | sort | uniq -c | sort -nr | head -10   # 6C
+  382  tmux new-session -s homework
+  383  tmux ls
+  384  tmux attach -t homework
+  385  cd ~
+  386  mkdir -p cs131/WS5
+  387  cd cs131/WS5
+  388  mkdir -p ~/TWEETS
+  389  nano gettweetbydate.sh
+  390  chmod 755 gettweetbydate.sh
+  391  nano latesttweets.sh
+  392  chmod 755 latesttweets.sh
+  393  crontab -e
+  394  select-editor
+  395  export VISUAL=nano
+  396  export EDITOR=nano
+  397  crontab -e
+  398  crontab -l
+  399  cd ~/cs131/WS5
+  400  ./gettweetbydate.sh 24-10-17
+  401  ls ~/TWEETS
+  402  cat ~/TWEETS/24-10-17.out
+  403  cd ~/cs131/WS5
+  404  echo "This is a test tweet for cron job check" > ~/TWEETS/test-tweet.out
+  405  ./latesttweets.sh
+  406  cat ~/ALLTWEETS.out
+  407  ls ~/TWEETS
+  408  history > cmds.log
+  409  ls
+  410  tmux new-session -s homework
+  411  tmux attach -t homework
+  412  tmux new-session -s homework
+  413  tmux attach -t homework
+  414  ssh DholeAnushkaAmol@172.20.25.9
+  415  tmux attach -t homework
+  416  tmux new-session -s homework
+  417  tmux attach -t homework
+  418  tmux new-session -s homework
+  419  tmux attach -t homework
+  420  cd ~
+  421  vi ~/.bashrc
+  422  source ~/.bashrc
+  423  vi ~/.bashrc
+  424  source ~/.bashrc
+  425  vi ~/.bashrc
+  426  source ~/.bashrc
+  427  type l
+  428  type w
+  429  w
+  430  cd ~/cs131/WS4
+  431  pwd
+  432  T1=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  433  T2=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+  434  ls -l "$T1" "$T2"
+  435  tr -d '\r' < "$T1" > twitter1.clean.tsv
+  436  tr -d '\r' < "$T2" > twitter2.clean.tsv
+  437  ls -l twitter1.clean.tsv twitter2.clean.tsv
+  438  head -2 twitter1.clean.tsv
+  439  head -2 twitter2.clean.tsv
+  440  awk -F '\t' '$1 !~ /^(id|tweetid)$/ && NF >= 7 && $7 != "" {print $2}' twitter1.clean.tsv twitter2.clean.tsv | sort | uniq -c | sort -nr | head -10
+  441  awk -F '\t' '$1 !~ /^(id|tweetid)$/ && NF >= 7 && $7 != "" {print $7}' twitter1.clean.tsv twitter2.clean.tsv | sort | uniq -c | sort -nr | head -10
+  442  egrep -i '(^|[[:space:]])RT[[:space:]]*@' twitter1.clean.tsv twitter2.clean.tsv | awk -F '\t' '{print $2}' | sort | uniq -c | sort -nr | head -10
+  443  bash-4.4$
+  444  cd ~/cs131/WS4
+  445  awk -F '\t' '$1 !~ /^(id|tweetid)$/ {print $1, $2}' twitter1.clean.tsv twitter2.clean.tsv | sort -n -k1,1 > original_tweets.txt
+  446  awk -F '\t' '$1 !~ /^(id|tweetid)$/ && $1 != "" {print $1, $2}' twitter2.clean.tsv | sort -n -k1,1 > retweet_foreign_keys.txt
+  447  join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+  448  awk -F '\t' '$1 !~ /^(id|tweetid)$/ {print $1, $2}' twitter1.clean.tsv twitter2.clean.tsv | LC_ALL=C sort -k1,1 > original_tweets.txt
+  449  awk -F '\t' '$1 !~ /^(id|tweetid)$/ && $1 != "" {print $1, $2}' twitter2.clean.tsv | LC_ALL=C sort -k1,1 > retweet_foreign_keys.txt
+  450  join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+  451  LC_ALL=C join -j 1 original_tweets.txt retweet_foreign_keys.txt | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+  452  tmux ls
+  453  tmux attach -d -t homework
+  454  cd ~/cs131
+  455  git status
+  456  git push origin main
+  457  git status
+  458  cd ~/cs131/WS4
+  459  ssh -o ServerAliveInterval=30 -o ServerAliveCountMax=5 DholeAnushkaAmol@172.20.25.9
+  460  if grep -qiE 'ATCT|x-token-auth|bitbucket\.org.*@|passwd|password|API_TOKEN' cmds.log; then     echo "Sensitive information found in cmds.log"; else     echo "No obvious sensitive information found"; fi
+  461  cp cmds.log /tmp/cmds.log.before-clean
+  462  sed -E '/ATCT|x-token-auth|bitbucket\.org.*@|passwd|password|API_TOKEN|csothersdont/Id' cmds.log > /tmp/cmds.log.cleaned
+  463  mv /tmp/cmds.log.cleaned cmds.log
+  464  if grep -qiE 'ATCT|x-token-auth|bitbucket\.org.*@|passwd|password|API_TOKEN' cmds.log; then     echo "Sensitive information still found"; else     echo "cmds.log is clean"; fi
+  465  cd ~/cs131
+  466  git add WS4/cmds.log
+  467  git diff --cached --stat
+  468  git commit -m "Remove sensitive information from command log"
+  469  git push origin main
+  470  git status
+  471  T1=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  472  T2=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+  473  cp -v "$T1" downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  474  cp -v "$T2" downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+  475  ls -lh downloaded_tweets_extend*.tsv
+  476  F1=downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  477  F2=downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+  478  grep -h 'type=retweeted' "$F1" "$F2" | awk -F '\t' '
+  479  {
+  480      if (match($0, /ReferencedTweet id=[0-9]+ type=retweeted/)) {
+  481          ref=substr($0,RSTART,RLENGTH)
+  482          sub(/^ReferencedTweet id=/,"",ref)
+  483          sub(/ type=retweeted$/,"",ref)
+  484          print ref "\t" $2
+  485      }
+  486  }' | LC_ALL=C sort -t $'\t' -k1,1 > retweet_refs.sorted
+  487  wc -l retweet_refs.sorted
+  488  head retweet_refs.sorted
+  489  awk -F '\t' '
+  490  $1 !~ /^(id|tweetid)$/ && $1 != "" && $2 != "" {
+  491      print $1 "\t" $2
+  492  }' "$F1" "$F2" | LC_ALL=C sort -t $'\t' -k1,1 -u > id_to_userB.sorted
+  493  wc -l id_to_userB.sorted
+  494  head id_to_userB.sorted
+  495  LC_ALL=C join -t $'\t' -1 1 -2 1 id_to_userB.sorted retweet_refs.sorted | awk -F '\t' '{print $3 "\t" $2}' | LC_ALL=C sort -t $'\t' -k2,2 > retweets.txt
+  496  wc -l retweets.txt
+  497  head retweets.txt
+  498  awk -F '\t' 'NF != 2 {bad++} END {print "Malformed lines:", bad+0}' retweets.txt
+  499  awk -F '\t' '$1 != $2' retweets.txt > retweets_nobots.txt
+  500  awk -F '\t' '$1 == $2 {count++} END {print "Self-pairs remaining:", count+0}' retweets_nobots.txt
+  501  LC_ALL=C sort -t $'\t' -k1,1 -k2,2 retweets_nobots.txt | uniq > retweets_nobots_uniq.txt
+  502  wc -l retweets.txt retweets_nobots.txt retweets_nobots_uniq.txt
+  503  LC_ALL=C sort retweets_nobots_uniq.txt | uniq -d | head
+  504  cut -f2 retweets_nobots_uniq.txt | sort | uniq -c | awk '$1 >= 3 {print $2}' > high_influence_retweets.txt
+  505  cut -f2 retweets_nobots_uniq.txt | sort | uniq -c | awk '$1 < 3 {print $2}' > low_influence_retweets.txt
+  506  wc -l high_influence_retweets.txt low_influence_retweets.txt
+  507  head high_influence_retweets.txt
+  508  head low_influence_retweets.txt
+  509  awk -F '\t' '
+  510  NR == FNR {high[$1]=1; next}
+  511  ($2 in high) {print}
+  512  ' high_influence_retweets.txt retweets_nobots_uniq.txt | sort -t $'\t' -k2,2 > retweets_nobots_uniq_highinfluence.txt
+  513  awk -F '\t' '
+  514  NR == FNR {low[$1]=1; next}
+  515  ($2 in low) {print}
+  516  ' low_influence_retweets.txt retweets_nobots_uniq.txt | sort -t $'\t' -k2,2 > retweets_nobots_uniq_lowinfluence.txt
+  517  TOTAL=$(wc -l < retweets_nobots_uniq.txt)
+  518  HIGH=$(wc -l < retweets_nobots_uniq_highinfluence.txt)
+  519  LOW=$(wc -l < retweets_nobots_uniq_lowinfluence.txt)
+  520  echo "Unique total: $TOTAL"
+  521  echo "High total: $HIGH"
+  522  echo "Low total: $LOW"
+  523  if [ "$TOTAL" -eq $((HIGH + LOW)) ]; then     echo "PASS"; else     echo "FAIL"; fi
+  524  wc -l retweets_nobots_uniq_highinfluence.txt retweets_nobots_uniq_lowinfluence.txt
+  525  head retweets_nobots_uniq_highinfluence.txt
+  526  head retweets_nobots_uniq_lowinfluence.txt
+  527  echo "Question 6A - High influence"
+  528  cut -f2 retweets_nobots_uniq_highinfluence.txt | sort -u | wc -l
+  529  echo "Question 6A - Low influence"
+  530  cut -f2 retweets_nobots_uniq_lowinfluence.txt | sort -u | wc -l
+  531  echo "Question 6B - High influence"
+  532  cut -f1 retweets_nobots_uniq_highinfluence.txt | sort -u | wc -l
+  533  echo "Question 6B - Low influence"
+  534  cut -f1 retweets_nobots_uniq_lowinfluence.txt | sort -u | wc -l
+  535  echo "Question 6C - High influence top 10"
+  536  cut -f2 retweets_nobots_uniq_highinfluence.txt | sort | uniq -c | sort -nr | head -10
+  537  echo "Question 6C - Low influence top 10"
+  538  cut -f2 retweets_nobots_uniq_lowinfluence.txt | sort | uniq -c | sort -nr | head -10
+  539  tmux attach -t homework
+  540  TOTAL=$(wc -l < "$F")
+  541  echo "Input file: $F"
+  542  echo "Total input lines: $TOTAL"
+  543  N=$(awk -v n="$TOTAL" 'BEGIN {printf "%d", n/100}')
+  544  echo "Expected 1% lines: $N"
+  545  shuf < "$F" | head -n "$N" > sample_1.txt
+  546  echo "Actual 1% lines:"
+  547  wc -l sample_1.txt
+  548  for x in $(seq 1 10); do     N=$(awk -v n="$TOTAL" -v p="$x" 'BEGIN {printf "%d", n*p/100}');     OUT="sample_${x}.txt";      shuf < "$F" | head -n "$N" > "$OUT";     ln -sfn "$OUT" "subsam.$x";      echo "Percentage: ${x}%";     echo -n "Expected: ";     echo "$N";     echo -n "Actual:   ";     wc -l < "$OUT"; done
+  549  ls -l subsam.*
+  550  wc -l sample_*.txt
+  551  history > cmds.log
+  552  F=../A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+  553  echo "$F"
+  554  ls -lh "$F"
+  555  TOTAL=$(wc -l < "$F")
+  556  echo "Input file: $F"
+  557  echo "Total input lines: $TOTAL"
+  558  N=$(awk -v n="$TOTAL" 'BEGIN {printf "%d", n/100}')
+  559  echo "Expected 1% lines: $N"
+  560  shuf < "$F" | head -n "$N" > sample_1.txt
+  561  echo "Actual 1% lines:"
+  562  wc -l sample_1.txt
+  563  for x in $(seq 1 10); do     N=$(awk -v n="$TOTAL" -v p="$x" 'BEGIN {printf "%d", n*p/100}');     OUT="sample_${x}.txt";      shuf < "$F" | head -n "$N" > "$OUT";     ln -sfn "$OUT" "subsam.$x";      echo "Percentage: ${x}%";     echo -n "Expected: ";     echo "$N";     echo -n "Actual:   ";     wc -l < "$OUT"; done
+  564  history > cmds.log
