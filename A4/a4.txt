@@ -1,0 +1,117 @@
+Script started on 2026-09-15 18:36:51-04:00
+bash-4.4$ RHI=$(find ~/cs131 -type f -name 'replies_nobots_uniq_highinfluence.txt' -print -quit)
+-type f -name 'retweets_nobots_uniq_highinfluence.txt' -print -quit)
+TLI=$(find ~/cs131 -type f -name 'retweets_bash-4.4$ RLI=$(find ~/cs131 -type f -name 'replies_nobots_uniq_lowinfluence.txt' -print -quit)
+bash-4.4$ THI=$(find ~/cs131 -type f -name 'retweets_nobots_uniq_highinfluence.txt' -print -quit)
+bash-4.4$ TLI=$(find ~/cs131 -type f -name 'retweets_nobots_uniq_lowinfluence.txt' -print -quit)
+bash-4.4$ 
+bash-4.4$ printf '%s\n' "$RHI" "$RLI" "$THI" "$TLI"
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txt
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_lowinfluence.txt
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_lowinfluence.txt
+bash-4.4$ ls -lh "$RHI" "$RLI" "$THI" "$TLI"
+-rw-r--r-- 1 DholeAnushkaAmol billa 145K Oct 16  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa 296K Oct 16  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_lowinfluence.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa 1.1M Sep 12 14:51 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa 1.3M Sep 12 14:51 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_lowinfluence.txt
+bash-4.4$ [Kbash-4.4$ [Kbash-4.4$ LC_ALL=C sort -k2,2 "$RHI" | awk '{print $2}' | uniq -c | sort -k1,1n > replies_high_grouping.txt
+bash-4.4$ LC_ALL=C sort -k2,2 "$RLI" | awk '{print $2}' | uniq -c | sort -k1,1n > replies_low_grouping.txt
+bash-4.4$ LC_ALL=C sort -k2,2 "$THI" | awk '{print $2}' | uniq -c | sort -k1,1n > retweets_high_grouping.txt
+bash-4.4$ LC_ALL=C sort -k2,2 "$TLI" | awk '{print $2}' | uniq -c | sort -k1,1n > retweets_low_grouping.txt
+bash-4.4$ head replies_high_grouping.txt
+      3 1001160971262550017
+      3 1010384732759252997
+      3 1011970623470489601
+      3 1016943828052336640
+      3 1045110787
+      3 10615232
+      3 1067968702400876544
+      3 1073047860260814848
+      3 1082258629116465152
+      3 1087209480184463362
+bash-4.4$ head replies_low_grouping.txt
+      1 100011309
+      1 1000499544
+      1 1000965128928440321
+      1 1000996812
+      1 1001228776032763905
+      1 1001242816176148481
+      1 1001848891401220096
+      1 100199356
+      1 100331858
+      1 1003662615661436929
+bash-4.4$ head retweets_high_grouping.txt
+      3 1000050134535860224
+      3 1001769760596676609
+      3 1002260322923794432
+      3 1002666643040894978
+      3 1004840093843062785
+      3 1004894980962336768
+      3 1006709624576229377
+      3 10069612
+      3 10085312
+      3 1008688766062661632
+bash-4.4$ head retweets_low_grouping.txt
+      1 1000005001
+      1 1000078041421434880
+      1 1000122949645586432
+      1 1000198128526659584
+      1 1000218878
+      1 1000230050736701441
+      1 1000413742423781376
+      1 1000416326194810881
+      1 1000417870814351365
+      1 1000563587809624065
+bash-4.4$ wc -l replies_high_grouping.txt replies_low_grouping.txt retweets_high_grouping.txt retweets_low_grouping.txt
+    875 replies_high_grouping.txt
+  10152 replies_low_grouping.txt
+   5866 retweets_high_grouping.txt
+  43145 retweets_low_grouping.txt
+  60038 total
+bash-4.4$ awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' replies_high_grouping.txt | LC_ALL=C sort -k1,1n > replies_high_hiistogram.dat
+bash-4.4$ awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' replies_low_grouping.txt | LC_ALL=C sort -k1,1n > replies_low_histtogram.dat
+bash-4.4$ awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' retweets_high_grouping.txt | LC_ALL=C sort -k1,1n > retweets_high__histogram.dat
+bash-4.4$ awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' retweets_low_grouping.txt | LC_ALL=C sort -k1,1n > retweets_low_hiistogram.dat
+bash-4.4$ head replies_high_histogram.dat
+3 335
+4 161
+5 84
+6 56
+7 51
+8 38
+9 16
+10 14
+11 16
+12 17
+bash-4.4$ head replies_low_histogram.dat
+1 9230
+2 922
+bash-4.4$ head retweets_high_histogram.dat
+3 2028
+4 1016
+5 651
+6 417
+7 300
+8 239
+9 181
+10 140
+11 122
+12 105
+bash-4.4$ head retweets_low_histogram.dat
+1 37925
+2 5220
+bash-4.4$ gnuplot --version
+gnuplot 5.2 patchlevel 4
+bash-4.4$ gnuplot -e "set terminal pdfcairo enhanced color size 8,6; set output 'replies_high.pdf'; set title 'Replies - High Influencce'; set xlabel 'Number of Replies'; set ylabel 'Number of Users'; set boxwidth 0.9; set style fill solid 0.8 border; set xtics 1; ploot 'replies_high_histogram.dat' using 1:2 with boxes notitle"
+bash-4.4$ gnuplot -e "set terminal pdfcairo enhanced color size 8,6; set output 'replies_low.pdf'; set title 'Replies - Low Influence''; set xlabel 'Number of Replies'; set ylabel 'Number of Users'; set boxwidth 0.9; set style fill solid 0.8 border; set xtics 1; plot  'replies_low_histogram.dat' using 1:2 with boxes notitle"
+bash-4.4$ gnuplot -e "set terminal pdfcairo enhanced color size 8,6; set output 'retweets_high.pdf'; set title 'Retweets - High Influeence'; set xlabel 'Number of Retweets'; set ylabel 'Number of Users'; set boxwidth 0.9; set style fill solid 0.8 border; set xtics 1;  plot 'retweets_high_histogram.dat' using 1:2 with boxes notitle"
+bash-4.4$ gnuplot -e "set terminal pdfcairo enhanced color size 8,6; set output 'retweets_low.pdf'; set title 'Retweets - Low Influencce'; set xlabel 'Number of Retweets'; set ylabel 'Number of Users'; set boxwidth 0.9; set style fill solid 0.8 border; set xtics 1; pllot 'retweets_low_histogram.dat' using 1:2 with boxes notitle"
+bash-4.4$ ls -lh replies_high.pdf replies_low.pdf retweets_high.pdf retweets_low.pdf
+-rw-r--r-- 1 DholeAnushkaAmol billa 16K Nov  2 18:06 replies_high.pdf
+-rw-r--r-- 1 DholeAnushkaAmol billa 13K Nov  2 18:06 replies_low.pdf
+-rw-r--r-- 1 DholeAnushkaAmol billa 17K Nov  2 18:07 retweets_high.pdf
+-rw-r--r-- 1 DholeAnushkaAmol billa 12K Nov  2 18:07 retweets_low.pdf
+bash-4.4$ exit
+
+Script done on 2026-11-02 18:10:09-05:00
