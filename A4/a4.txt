@@ -14,7 +14,7 @@ ls -lh "$RHI" "$RLI" "$THI" "$TLI"
 -rw-r--r-- 1 DholeAnushkaAmol billa 296K Oct 16  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_lowinfluence.txt
 -rw-r--r-- 1 DholeAnushkaAmol billa 1.1M Sep 12 14:51 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt
 -rw-r--r-- 1 DholeAnushkaAmol billa 1.3M Sep 12 14:51 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_lowinfluence.txt
-LC_ALL=C sort -k2,2 "$RHI" | awk '{print $2}' | uniq -c | sort -k1,1n > replies_high_grouping.txt
+LC_ALL=C sort -k2,2 "$RHI" | awk '{print $2}' | uniq -c | sort -k1,1n > replies_high_grouping.txt
 LC_ALL=C sort -k2,2 "$RLI" | awk '{print $2}' | uniq -c | sort -k1,1n > replies_low_grouping.txt
 LC_ALL=C sort -k2,2 "$THI" | awk '{print $2}' | uniq -c | sort -k1,1n > retweets_high_grouping.txt
 LC_ALL=C sort -k2,2 "$TLI" | awk '{print $2}' | uniq -c | sort -k1,1n > retweets_low_grouping.txt
@@ -68,7 +68,7 @@ wc -l replies_high_grouping.txt replies_low_grouping.txt retweets_high_grouping.
    5866 retweets_high_grouping.txt
   43145 retweets_low_grouping.txt
   60038 total
-awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' replies_high_grouping.txt | LC_ALL=C sort -k1,1n > replies_high_hiistogram.dat
+awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' replies_high_grouping.txt | LC_ALL=C sort -k1,1n > replies_high_histogram.dat
 awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' replies_low_grouping.txt | LC_ALL=C sort -k1,1n > replies_low_histtogram.dat
 awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' retweets_high_grouping.txt | LC_ALL=C sort -k1,1n > retweets_high__histogram.dat
 awk '{freq[$1]++} END {for (x in freq) print x, freq[x]}' retweets_low_grouping.txt | LC_ALL=C sort -k1,1n > retweets_low_hiistogram.dat
