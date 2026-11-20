@@ -1,0 +1,427 @@
+Assignment 5 comparison:
+
+Replies: The overall top reply hashtags were mainly common topics such as auspol, Ukraine, COVID19, Russia, AI, StandWithUkraine, LongCovid, cdnpoli, Omicron, bcpoli, WritingCommunity, DemVoice1, writerslift, BREAKING, Russian, ableg, CES2022, ausvotes, Putin, and AlboForPM. The highest relative-frequency reply hashtags were AMJOY, AbbotsHillStrike, BBCYourQuestionsAnswered, BookBuzzr, BoycottKroger, DefundWordle, DirtyJoe, EmptyWords, ForeverJaime, JohnsonbeingPutin, K, NewPlanForImmigration, NoFireRehire, SameOldLabour, StayHealthyToStayOpen, TVseries, TeamAnstand, Truthbomb, boycottpepsi, and decertify. None of these appeared in the overall top 20, so they are special to particular subgraphs. Examples include AMJOY for user 47475039, AbbotsHillStrike for user 189631331, BBCYourQuestionsAnswered for user 742143, BoycottKroger for user 886398296146706432, and JohnsonbeingPutin for user 1137992526646956033. The complete mapping is in replies_hashtag_freqs.tsv.
+
+Retweets: The overall retweet hashtags included innovation, Russian, insurtech, Putin, BREAKING, futuretech, FollowBackFriday, WritingCommunity, FBPE, and writerslift. The highest relative-frequency retweet hashtags were BlockedByLeana, BoycottShell, BringBackPCRForKids, ByeByeFord, CANMNT, CDNMediaFail, DoBetterDelDuca, FireKieranMoore, FordFailedParents, FordFailedStudents, GoodEpi, HERO, MikeRyan, SchoolBoardFail, UofGuelph, bettermasksOct14, firedrmoore, muffin, nuance, and variables. None of these appeared in the overall top 20, so they are special to a particular subgraph. All 20 were associated with user 14362766. The complete mapping is in retweets_hashtag_freqs.tsv.
+
+Script started on 2026-11-19 23:57:15-05:00
+bash-4.4$ find ~/cs131 -type f \( -name 'replies_nobots_uniq_highinfluence.txt' -o -name 'retweets_nobots_uniq_highinfluence.txt' -o --name 'downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv' -o -name 'downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv' \) -print Mt
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txt
+bash-4.4$ nano freqs.sh
+(B)0===[ New File ]  GNU nano 2.9.8                                                 freqs.sh                                                            ^G Get Help     ^O Write Out    ^W Where Is     ^K Cut Text     ^J Justify	^C Cur Pos	M-U UndoM-A Mark Text^X Exit^R Read File    ^\ Replace	^U Uncut Text   ^T To Linter    ^_ Go To Line   M-E RedoM-6 Copy TextMMModified#!/usr/bin/env bashif [ "$#" -ne 2 ]; thenecho "Usage: $0 tweets.tsv network.txt"exiexit 1fitweets=""$1"network="$2"tmpdir=$(mktemp -d)trap 'rm -rf "$tmpdir"' EXITLC_ALL=C awk '{print $2}' "$"$network" | sort -u > "$tmpdir/users"printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \"hashtag_H"hashtag_H" \"user(userB ID in subgraphB network)" \"relative_frequency_H_in_subgraphB" \"frequency_H_in_subgraphB" \"frequency_H_overall" \"count_H_in_subgraphB" \"count_tweets_in_subgraphB" \"count_H_entire_dataset" \"count_tweets_entire_dataset"LC_ALL=C awk -F '\t' -v {userB = $2    total_tweets++tag_count = split($4, tags, ",")for (i = 1; i <= tag_count; i++) {	tag = tags[i]	gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)if (tag != "") overall[tag]++    }    if (userB in wanted) {subgraph_tweets[userB]++	for (i = 1; i <= tag_count; i++) { tag = tags[i]  M	tweets_subgraph = subgraph_tweets[userB]    count_overall = overall[tag]    tweets_overall = total_tweets    frequency_subgraph = count_subgraph / tweets_subgraphfrequency_overall = count_overall / tweets_overall    relative_frequency = frequency_subgraph / frequency_overallprintf "%s\t%s\t%.12g\t%.12g\t%.12g\t%d\t%d\t%d\t%d\n", \    tag, userB, relative_frequency, frequency_subgraph, \frequency_overall, count_subgraph, tweets_subgraph, \count_overall, tweets_overall}' "$tweets" "$network" |  LC_ALL=C sort -t "$(printf '\t')" -k3,3nr -k1,1 -k2,2                 M-D DOS Format                   M-A Append              	   M-B Backup FileC Cancel	                 M-M Mac Format                   M-P Prepend                      ^T To FilesMMFile Name to Write: freqs.sh                                                                                                                 [ Wrote 80 lines ]^O Write Out    ^W Where Is     ^K Cut Text     ^J Justify      ^C Cur Pos	M-U Undo        M-A Mark TextX Exit  	^R Read File    ^\ Replace      ^U Uncut Text   ^T To Linter    ^_ Go To Line   M-E Redo        M-6 Copy TextMM>bash-4.4$ chmod u+x freqs.sh
+bash-4.4$ wc -l freqs.sh
+80 freqs.sh
+bash-4.4$ head -5 freqs.sh
+#!/usr/bin/env bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 tweets.tsv network.txt"
+    exit 1
+bash-4.4$ REPLIES=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+bash-4.4$ RETWEETS=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+bash-4.4$ RHI=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txt
+bash-4.4$ THI=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt
+bash-4.4$ ls -lh "$REPLIES" "$RETWEETS" "$RHI" "$THI"
+-rw-r--r-- 1 DholeAnushkaAmol billa 145K Oct 16  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa  61M Sep 12 14:23 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 1.1M Sep 12 14:51 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt
+-rw-r--r-- 1 DholeAnushkaAmol billa  44M Oct  2  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv
+bash-4.4$ ./freqs.sh "$REPLIES" "$RHI" > replies_hashtag_freqs.tsv
+bash-4.4$ ./freqs.sh "$RETWEETS" "$THI" > retweets_hashtag_freqs.tsv
+bash-4.4$ ls -lh replies_hashtag_freqs.tsv retweets_hashtag_freqs.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 1.3M Nov 20 00:03 replies_hashtag_freqs.tsv
+-rw-r--r-- 1 DholeAnushkaAmol billa 856K Nov 20 00:04 retweets_hashtag_freqs.tsv
+bash-4.4$ head -5 replies_hashtag_freqs.tsv
+hashtag_H	user(userB ID in subgraphB network)	relative_frequency_H_in_subgraphB	frequency_H_in_subgraphB	frequency_H_overall	count_H_in_subgraphB	count_tweets_in_subgraphB	count_H_entire_dataset	count_tweets_entire_dataset
+"EmptyWords	116228328	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+BBCYourQuestionsAnswered	742143	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+DefundWordle	510464011	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+JohnsonbeingPutin	1137992526646956033	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+bash-4.4$ head -5 retweets_hashtag_freqs.tsv
+hashtag_H	user(userB ID in subgraphB network)	relative_frequency_H_in_subgraphB	frequency_H_in_subgraphB	frequency_H_overall	count_H_in_subgraphB	count_tweets_in_subgraphB	count_H_entire_dataset	count_tweets_entire_dataset
+"MikeRyan	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+"PedsICU	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+"UofGuelph	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+"muffin	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+bash-4.4$ awk -F '\t' 'NF != 9 {print "Bad line:", NR, "columns:", NF}' replies_hashtag_freqs.tsv
+bash-4.4$ awk -F '\t' 'NF != 9 {print "Bad line:", NR, "columns:", NF}' retweets_hashtag_freqs.tsv
+bash-4.4$ sed -i '/if (tag != "") overall\[tag\]++/i\        gsub(/^"|"$/, "", tag)' freqs.sh
+bash-4.4$ sed -i '/if (tag != "")$/i\            gsub(/^"|"$/, "", tag)' freqs.sh
+bash-4.4$ grep -n 'gsub' freqs.sh
+41:        gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
+42:            gsub(/^"|"$/, "", tag)
+52:            gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
+53:            gsub(/^"|"$/, "", tag)
+bash-4.4$ ./freqs.sh "$REPLIES" "$RHI" > replies_hashtag_freqs.tsv
+bash-4.4$ ./freqs.sh "$RETWEETS" "$THI" > retweets_hashtag_freqs.tsv
+bash-4.4$ head -5 replies_hashtag_freqs.tsv
+hashtag_H	user(userB ID in subgraphB network)	relative_frequency_H_in_subgraphB	frequency_H_in_subgraphB	frequency_H_overall	count_H_in_subgraphB	count_tweets_in_subgraphB	count_H_entire_dataset	count_tweets_entire_dataset
+BBCYourQuestionsAnswered	742143	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+DefundWordle	510464011	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+EmptyWords	116228328	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+JohnsonbeingPutin	1137992526646956033	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+bash-4.4$ head -5 retweets_hashtag_freqs.tsv
+hashtag_H	user(userB ID in subgraphB network)	relative_frequency_H_in_subgraphB	frequency_H_in_subgraphB	frequency_H_overall	count_H_in_subgraphB	count_tweets_in_subgraphB	count_H_entire_dataset	count_tweets_entire_dataset
+BlockedByLeana	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+BoycottShell	14362766	3102.46590909	0.0568181818182	1.83138778904e-05	5	88	5	273017
+BringBackPCRForKids	14362766	3102.46590909	0.0340909090909	1.09883267342e-05	3	88	3	273017
+ByeByeFord	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+bash-4.4$ echo "TOP 20 REPLY HASHTAGS OVERALL"
+TOP 20 REPLY HASHTAGS OVERALL
+bash-4.4$ awk -F '\t' '
+> {
+>     n=split($4,tags,",")
+>     for(i=1;i<=n;i++) {
+>         tag=tags[i]
+>         gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
+>         gsub(/^"|"$/, "", tag)
+>         if(tag!="") count[tag]++
+>     }
+> }
+> END {
+>     for(tag in count)
+>         print count[tag] "\t" tag
+> }
+> ' "$REPLIES" | LC_ALL=C sort -k1,1nr -k2,2 | head -20
+6912	auspol
+6723	Ukraine
+3759	COVID19
+2584	Russia
+2174	AI
+2128	StandWithUkraine
+2062	LongCovid
+1424	cdnpoli
+1200	Omicron
+1173	bcpoli
+1156	WritingCommunity
+1142	DemVoice1
+1128	writerslift
+981	BREAKING
+950	Russian
+883	ableg
+785	CES2022
+783	ausvotes
+779	Putin
+759	AlboForPM
+bash-4.4$ echo "TOP 20 RETWEET HASHTAGS OVERALL"
+TOP 20 RETWEET HASHTAGS OVERALL
+bash-4.4$ awk -F '\t' '
+> {
+>     n=split($4,tags,",")
+>     for(i=1;i<=n;i++) {
+>         tag=tags[i]
+>         gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
+>         gsub(/^"|"$/, "", tag)
+>         if(tag!="") count[tag]++
+>     }
+> }
+> END {
+>     for(tag in count)
+>         print count[tag] "\t" tag
+> }
+> ' "$RETWEETS" | LC_ALL=C sort -k1,1nr -k2,2 | head -20
+7282	Ukraine
+4678	COVID19
+3355	auspol
+3235	clickbait
+2973	Russia
+2842	LongCovid
+2254	GrowthTech
+1877	AI
+1661	StandWithUkraine
+1444	Omicron
+1409	innovation
+1271	Russian
+1268	insurtech
+1233	Putin
+1157	BREAKING
+1032	futuretech
+958	FollowBackFriday
+937	WritingCommunity
+932	FBPE
+892	writerslift
+bash-4.4$ echo "TOP 20 REPLY RELATIVE FREQUENCIES"
+TOP 20 REPLY RELATIVE FREQUENCIES
+bash-4.4$ head -21 replies_hashtag_freqs.tsv
+hashtag_H	user(userB ID in subgraphB network)	relative_frequency_H_in_subgraphB	frequency_H_in_subgraphB	frequency_H_overall	count_H_in_subgraphB	count_tweets_in_subgraphB	count_H_entire_dataset	count_tweets_entire_dataset
+BBCYourQuestionsAnswered	742143	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+DefundWordle	510464011	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+EmptyWords	116228328	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+JohnsonbeingPutin	1137992526646956033	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+K	1271084812296761344	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+SameOldLabour	116228328	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+Truthbomb	20172153	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+boycottpepsi	15464697	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+decertify	757832485	37793.25	0.25	6.61493785266e-06	1	4	1	151173
+AMJOY	47475039	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+AbbotsHillStrike	189631331	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+BookBuzzr	67953340	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+BoycottKroger	886398296146706432	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+DirtyJoe	148529707	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+ForeverJaime	967027984426242053	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+NewPlanForImmigration	61660254	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+NoFireRehire	189631331	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+StayHealthyToStayOpen	17143007	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+TVseries	67953340	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+TeamAnstand	1460176204363972613	30234.6	0.2	6.61493785266e-06	1	5	1	151173
+bash-4.4$ echo "TOP 20 RETWEET RELATIVE FREQUENCIES"
+TOP 20 RETWEET RELATIVE FREQUENCIES
+bash-4.4$ head -21 retweets_hashtag_freqs.tsv
+hashtag_H	user(userB ID in subgraphB network)	relative_frequency_H_in_subgraphB	frequency_H_in_subgraphB	frequency_H_overall	count_H_in_subgraphB	count_tweets_in_subgraphB	count_H_entire_dataset	count_tweets_entire_dataset
+BlockedByLeana	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+BoycottShell	14362766	3102.46590909	0.0568181818182	1.83138778904e-05	5	88	5	273017
+BringBackPCRForKids	14362766	3102.46590909	0.0340909090909	1.09883267342e-05	3	88	3	273017
+ByeByeFord	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+CDNMediaFail	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+DoBetterDelDuca	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+FordFailedParents	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+GoodEpi	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+MikeRyan	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+SchoolBoardFail	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+UofGuelph	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+bettermasksOct14	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+firedrmoore	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+muffin	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+nuance	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+variables	14362766	3102.46590909	0.0113636363636	3.66277557808e-06	1	88	1	273017
+HERO	14362766	1551.23295455	0.0113636363636	7.32555115616e-06	1	88	2	273017
+CANMNT	14362766	1034.15530303	0.0113636363636	1.09883267342e-05	1	88	3	273017
+FireKieranMoore	14362766	1034.15530303	0.0227272727273	2.19766534685e-05	2	88	6	273017
+FordFailedStudents	14362766	1034.15530303	0.0113636363636	1.09883267342e-05	1	88	3	273017
+bash-4.4$ awk -F '\t' '
+> {
+>     n=split($4,tags,",")
+>     for(i=1;i<=n;i++) {
+>         tag=tags[i]
+>         gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
+>         gsub(/^"|"$/, "", tag)
+>         if(tag!="") count[tag]++
+>     }
+> }
+> END {
+>     for(tag in count)
+>         print count[tag] "\t" tag
+> }
+> ' "$REPLIES" |
+> LC_ALL=C sort -k1,1nr -k2,2 |
+> head -20 |
+> awk '{print $2}' |
+> LC_ALL=C sort > reply_overall20.txt
+es_hashtag_freqs.tsv |
+tail -20 |
+cut -f1 |
+LC_ALL=C sort -u > reply_relative20.txt
+
+echo "REPLY HASHTAGS IN RELATIVE TOP 20 BUT NOT OVERALL TOP 20"
+comm -23 reply_relative20.txt reply_overall20.txtbash-4.4$
+bash-4.4$ head -21 replies_hashtag_freqs.tsv |
+> tail -20 |
+> cut -f1 |
+> LC_ALL=C sort -u > reply_relative20.txt
+bash-4.4$
+bash-4.4$ echo "REPLY HASHTAGS IN RELATIVE TOP 20 BUT NOT OVERALL TOP 20"
+REPLY HASHTAGS IN RELATIVE TOP 20 BUT NOT OVERALL TOP 20
+bash-4.4$ comm -23 reply_relative20.txt reply_overall20.txt
+AMJOY
+comm: file 1 is not in sorted order
+AbbotsHillStrike
+BBCYourQuestionsAnswered
+BookBuzzr
+BoycottKroger
+DefundWordle
+DirtyJoe
+EmptyWords
+ForeverJaime
+JohnsonbeingPutin
+K
+NewPlanForImmigration
+NoFireRehire
+SameOldLabour
+StayHealthyToStayOpen
+TVseries
+TeamAnstand
+Truthbomb
+boycottpepsi
+decertify
+comm: file 2 is not in sorted order
+bash-4.4$ echo "REPLY HASHTAGS IN RELATIVE TOP 20 BUT NOT OVERALL TOP 20"
+REPLY HASHTAGS IN RELATIVE TOP 20 BUT NOT OVERALL TOP 20
+bash-4.4$ LC_ALL=C comm -23 reply_relative20.txt reply_overall20.txt
+AMJOY
+AbbotsHillStrike
+BBCYourQuestionsAnswered
+BookBuzzr
+BoycottKroger
+DefundWordle
+DirtyJoe
+EmptyWords
+ForeverJaime
+JohnsonbeingPutin
+K
+NewPlanForImmigration
+NoFireRehire
+SameOldLabour
+StayHealthyToStayOpen
+TVseries
+TeamAnstand
+Truthbomb
+boycottpepsi
+decertify
+bash-4.4$ wc -l reply_relative20.txt reply_overall20.txt
+ 20 reply_relative20.txt
+ 20 reply_overall20.txt
+ 40 total
+bash-4.4$ head reply_overall20.txt
+AI
+AlboForPM
+BREAKING
+CES2022
+COVID19
+DemVoice1
+LongCovid
+Omicron
+Putin
+Russia
+bash-4.4$ head reply_relative20.txt
+AMJOY
+AbbotsHillStrike
+BBCYourQuestionsAnswered
+BookBuzzr
+BoycottKroger
+DefundWordle
+DirtyJoe
+EmptyWords
+ForeverJaime
+JohnsonbeingPutin
+bash-4.4$ echo "REPLY SPECIAL HASHTAGS"
+REPLY SPECIAL HASHTAGS
+bash-4.4$ grep -Fvx -f reply_overall20.txt reply_relative20.txt
+AMJOY
+AbbotsHillStrike
+BBCYourQuestionsAnswered
+BookBuzzr
+BoycottKroger
+DefundWordle
+DirtyJoe
+EmptyWords
+ForeverJaime
+JohnsonbeingPutin
+K
+NewPlanForImmigration
+NoFireRehire
+SameOldLabour
+StayHealthyToStayOpen
+TVseries
+TeamAnstand
+Truthbomb
+boycottpepsi
+decertify
+bash-4.4$ awk -F '\t' '
+> {
+>     n=split($4,tags,",")
+>     for(i=1;i<=n;i++) {
+>         tag=tags[i]
+>         gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
+>         gsub(/^"|"$/, "", tag)
+>         if(tag!="") count[tag]++
+>     }
+> }
+> END {
+>     for(tag in count)
+>         print count[tag] "\t" tag
+> }
+> ' "$RETWEETS" |
+> LC_ALL=C sort -t "$(printf '\t')" -k1,1nr -k2,2 |
+> head -20 |
+> cut -f2 |
+> LC_ALL=C sort -u > retweet_overall20.txt
+bash-4.4$ head -21 retweets_hashtag_freqs.tsv |
+> tail -20 |
+> cut -f1 |
+> LC_ALL=C sort -u > retweet_relative20.txt
+bash-4.4$ wc -l retweet_relative20.txt retweet_overall20.txt
+ 20 retweet_relative20.txt
+ 20 retweet_overall20.txt
+ 40 total
+bash-4.4$ echo "RETWEET SPECIAL HASHTAGS"
+RETWEET SPECIAL HASHTAGS
+bash-4.4$ grep -Fvx -f retweet_overall20.txt retweet_relative20.txt
+BlockedByLeana
+BoycottShell
+BringBackPCRForKids
+ByeByeFord
+CANMNT
+CDNMediaFail
+DoBetterDelDuca
+FireKieranMoore
+FordFailedParents
+FordFailedStudents
+GoodEpi
+HERO
+MikeRyan
+SchoolBoardFail
+UofGuelph
+bettermasksOct14
+firedrmoore
+muffin
+nuance
+variables
+bash-4.4$ echo "REPLY SPECIAL HASHTAGS AND USERS"
+REPLY SPECIAL HASHTAGS AND USERS
+bash-4.4$ while read tag; do
+>     awk -F '\t' -v h="$tag" '$1 == h {print $1 "\t" $2}' replies_hashtag_freqs.tsv
+> done < <(grep -Fvx -f reply_overall20.txt reply_relative20.txt)
+AMJOY	47475039
+AbbotsHillStrike	189631331
+BBCYourQuestionsAnswered	742143
+BookBuzzr	67953340
+BoycottKroger	886398296146706432
+DefundWordle	510464011
+DirtyJoe	148529707
+EmptyWords	116228328
+ForeverJaime	967027984426242053
+JohnsonbeingPutin	1137992526646956033
+K	1271084812296761344
+NewPlanForImmigration	61660254
+NoFireRehire	189631331
+SameOldLabour	116228328
+StayHealthyToStayOpen	17143007
+TVseries	67953340
+TeamAnstand	1460176204363972613
+Truthbomb	20172153
+boycottpepsi	15464697
+decertify	757832485
+bash-4.4$ echo "RETWEET SPECIAL HASHTAGS AND USERS"
+RETWEET SPECIAL HASHTAGS AND USERS
+bash-4.4$ while read tag; do
+>     awk -F '\t' -v h="$tag" '$1 == h {print $1 "\t" $2}' retweets_hashtag_freqs.tsv
+> done < <(grep -Fvx -f retweet_overall20.txt retweet_relative20.txt)
+BlockedByLeana	14362766
+BoycottShell	14362766
+BringBackPCRForKids	14362766
+ByeByeFord	14362766
+CANMNT	14362766
+CDNMediaFail	14362766
+DoBetterDelDuca	14362766
+FireKieranMoore	14362766
+FordFailedParents	14362766
+FordFailedStudents	14362766
+GoodEpi	14362766
+HERO	14362766
+MikeRyan	14362766
+SchoolBoardFail	14362766
+UofGuelph	14362766
+bettermasksOct14	14362766
+firedrmoore	14362766
+muffin	14362766
+nuance	14362766
+variables	14362766
+bash-4.4$ nano a5.txt
+(B)0===[ Reading File ][ Read 331 lin	s ]  GNU nano 2.9.8                                                  a5.txt                                                             ^G Get Help     ^O Write Out    ^W Where Is     ^K Cut Text     ^J Justify	^C Cur Pos	M-U UndoM-A Mark Text^X Exit^R Read File    ^\ Replace	^U Uncut Text   ^T To Spell     ^_ Go To Line   M-E RedoM-6 Copy TextMMScript started on 2026-11-19 23:57:15-05:00bash-4.4$ find ~/cs131 -type f \( -name 'replies_nobots_uniq_highinfluence.txt' -o -name 'retweets_nobots_uniq_highinfluence.txt' -o$/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/WS2/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsv/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txt/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsv/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txtbash-4.4$ ^G^G^G^G^G^G^G^G^G^G^G^Gnano freqs.sh^[(B^[)0^[[?1049h^[[1;36r^[[m^O^[[4l^[[39;49m^[[?1h^[=^[[?1h^[=^[[?1h^[=^[[?25l^[[39;49m^[[m^O^[[H^[[J^[[34;61H^[[0;7m^O[ New File ]$bash-4.4$ wc -l freqs.sh80 freqs.shbash-4.4$ head -5 freqs.sh#!/usr/bin/env bashif [ "$#" -ne 2 ]; thenecho "Usage: $0 tweets.tsv network.txt"exit 1bash-4.4$ REPLIES=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_original_ids_nolf.ASCII.CLEAN.tsvbash-4.4$ RETWEETS=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_extend_nolf.ASCII.CLEAN.tsvbash-4.4$ RHI=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_highinfluence.txtbash-4.4$ THI=/mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_highinfluence.txtbash-4.4$ ls -lh "$REPLIES" "$RETWEETS" "$RHI" "$THI"-rw-r--r-- 1 DholeAnushkaAmol billa 145K Oct 16  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A2/replies_nobots_uniq_hi$-rw-r--r-- 1 DholeAnushkaAmol billa  61M Sep 12 14:23 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/downloaded_tweets_exte$-rw-r--r-- 1 DholeAnushkaAmol billa 1.1M Sep 12 14:51 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/A3/retweets_nobots_uniq_h$-rw-r--r-- 1 DholeAnushkaAmol billa  44M Oct  2  2025 /mnt/scratch/CS131_billa/FA25/DholeAnushkaAmol/cs131/downloaded_tweets_extend_$bash-4.4$ ./freqs.sh "$REPLIES" "$RHI" > replies_hashtag_freqs.tsvbash-4.4$ ./freqs.sh "$RETWEETS" "$THI" > retweets_hashtag_freqs.tsvModifiedAssignment 5 comScript started on 2026-11-19 23:57:15-05:00Assignment 5 comparison:Replies:The 20 most frequent reply hashtags overall were auspol, UkraScript started on 2026-11-19 23:57:15-05:00ine, COVID19, RuScript started on 2026-11-19 23:57:15-05:00$The 20 hashtags with the highest relative frequency in the reply subgraphs were AMJOY, AbbotsHillSScript started on 2026-11-19 23:5$$the reply relative-frequency top 20 appeared in the overall top 20, so these hashtags are special to particular subgraphs. Script s78The 20 most frequent reply hashtags overall were auspol, Ukraine, COVID19, Russia, AI, StandWithUkraine, LongCovid, cdnpoli, OmicronRScript started on 2026-11-19 23:57:15-05:00RMRetweets:The oveScript started on 2026-11-19 23:57:15-05:00rall retweet hashtags included innovation, Russian, insurtech, Putin, BREAKING, Script started on 2026-11-19 23:57:15-05:0078Mfuturetech, FollowBackFriday, WritingCommunit$Script started on 2026-11-19 23:57:15-05:00   M-C Case Sens      M-B Backwards      M-J FullJstify     ^W Beg of Par      ^Y First Line      ^P PrevHstoryC Cancel	   M-R Regexp         ^R Replace         ^T Go To Line      ^O End of Par      ^V Last Line       ^N NextHstoryMMSearch:                                                                                                                              Retweets^O Write Out    ^W Where Is     [
